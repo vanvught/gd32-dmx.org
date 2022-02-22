@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Bootloader TFTP</title>
+<meta name="description content="GigaDevice MCU GD32F Art-Net sACN DMX512 RDM OSC Pixel Bootloader TFTP">
+<meta name="author" content="Arjan van Vught">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+	<div class="topnav" id="myTopnav">
+		<a href="index.html">Home</a>
+		<a href="dev-board.html">Dev-board</a>
+		<a href="bootloader.html" class="active">Bootloader TFTP</a>
+		<a href="dmx512.html">DMX512</a>
+		<a href="pixel.html">Pixel</a> 
+		<a href="github.html">GitHub</a>
+		<a href="contact.html">Contact</a>
+		<a href="https://paypal.me/AvanVught?locale.x=nl_NL">PayPal.Me Donate</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i></a>
+	</div>
+
+	<div style="padding-left: 16px">
+		<h2>Bootloader TFTP</h2>
+		<p>The bootloader will install your application by means of the TFTP protocol. There is no need to change your application code. Per default DHCP is used for obtaining the ip-address.</p>
+		<p>The limitation for the firmware file to be uploaded is given by the RAM available:</p>
+
+		<table>
+			<tr>
+				<th>MCU</th>
+				<th>RAM</th>
+				<th>firmware size</th>
+			</tr>
+
+			<tr>
+				<td>GD32F107RC</td>
+				<td>96K</td>
+				<td style="text-align: center">74K</td>
+			</tr>
+
+			<tr>
+				<td>GD32F207RG</td>
+				<td>256K</td>
+				<td style="text-align: center">234K</td>
+			</tr>
+
+			<tr>
+				<td>GD32F207VC</td>
+				<td>128K</td>
+				<td style="text-align: center">106K</td>
+			</tr>
+
+			<tr>
+				<td>GD32F407RE</td>
+				<td>128K</td>
+				<td style="text-align: center">106K</td>
+			</tr>
+
+		</table>
+
+<p>
+		The bootloader can be installed with the tools supplied by GigaDevice:</p>
+		<ul>
+			<li><a href="http://www.gd32mcu.com/en/download/7?kw=GD32F1" target="_blank" rel="noopener noreferrer">GD32F107</a></li>
+			<li><a href="http://www.gd32mcu.com/en/download/7?kw=GD32F2" target="_blank" rel="noopener noreferrer">GD32F207</a></li>
+			<li><a href="http://www.gd32mcu.com/en/download/7?kw=GD32F4" target="_blank" rel="noopener noreferrer">GD32F407</a></li>
+		</ul>
+
+
+	</div>
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
