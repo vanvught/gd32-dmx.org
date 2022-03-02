@@ -34,6 +34,132 @@
 	</div>
 
   <div style="padding-left: 16px">
+    
+    <h3>Maximum DMX Port's</h3>
+    <table>
+      <tr>
+        <td>MCU Family</td>
+        <td>Port's</td>
+        <td>Note</td>
+      </tr>
+
+      <tr>
+        <td>GD32F10x</td>
+        <td>3</td>
+        <td>Except UART4 (no DMA function).</td>
+      </tr>
+
+      <tr>
+        <td>GD32F20x</td>
+        <td>6</td>
+        <td>Only 6 unique DMA channels are available.</td>
+      </tr>
+
+      <tr>
+        <td>GD32F4xx</td>
+        <td>8</td>
+        <td></td>
+      </tr>
+    </table>
+
+<h3>U(S)ART DMA Channel's</h3>
+<table style="font-size:90%">
+  <tr>
+    <td>MCU Family</td>
+    <td></td>
+    <td>Channnel 0</td>
+    <td>Channnel 1</td>
+    <td>Channnel 2</td>
+    <td>Channnel 3</td>
+    <td>Channnel 4</td>
+    <td>Channnel 5</td>
+    <td>Channnel 6</td>
+    <td>Channnel 7</td>
+  </tr>
+
+  <tr>
+    <td rowspan="2">GD32F10x</td>
+    <td>DMA 0</td>
+    <td></td>
+    <td class="uart_tx">USART2_TX</td>
+    <td>USART2_RX</td>
+    <td class="uart_tx">USART0_TX</td>
+    <td>USART0_RX</td>
+    <td>USART1_RX</td>
+    <td class="uart_tx">USART1_TX</td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td>DMA 1</td>
+    <td></td>
+    <td></td>
+    <td>UART3_RX</td>
+    <td></td>
+    <td class="uart_tx">UART3_TX</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td rowspan="2">GD32F20x</td>
+    <td>DMA 0</td>
+    <td></td>
+    <td>USART2_RX</td>
+    <td class="uart_tx">USART2_TX</td>
+    <td class="uart_tx">USART0_TX</td>
+    <td>USART0_RX</td>
+    <td>USART1_RX</td>
+    <td class="uart_tx">USART1_TX</td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td>DMA 1</td>
+    <td></td>
+    <td>UART4_RX<br>UART7_RX</td>
+    <td>UART3_RX<br>UART6_RX</td>
+    <td class="uart_tx">UART4_TX<br>UART7_TX</td>
+    <td class="uart_tx">UART3_TX<br>UART6_TX</td>
+    <td>USART5_RX</td>
+    <td class="uart_tx">USART5_TX</td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td rowspan="2">GD32F40x</td>
+    <td>DMA 0</td>
+    <td class="uart_tx">UART7_TX</td>
+    <td class="uart_tx">UART6_TX</td>
+    <td></td>
+    <td class="uart_tx">USART2_TX</td>
+    <td class="uart_tx">UART3_TX</td>
+    <td></td>
+    <td class="uart_tx">USART1_TX</td>
+    <td class="uart_tx">UART4_TX</td>
+  </tr>
+
+  <tr>
+    <td>DMA 1</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="uart_tx">USART5_TX</td>
+    <td class="uart_tx">USART0_TX</td>
+  </tr>
+</table>
+<p>
+The above is defined in the files:
+<ul>
+<li>lib-gd32/include/mcu/gd32f10x_mcu.h</li>
+<li>lib-gd32/include/mcu/gd32f20x_mcu.h</li>
+<li>lib-gd32/include/mcu/gd32f407_mcu.h</li>
+</ul>
+
 		<h2>Work in progress <a href="https://github.com/vanvught/gd32-dmx.org" target="_blank" rel="noopener noreferrer">https://github.com/vanvught/gd32-dmx.org</a></h2>
 	</div>
 
