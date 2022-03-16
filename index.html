@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>GD32Fxxx DMX512 RDM Pixel</title>
-<meta name="description content="GigaDevice MCU GD32F Art-Net sACN DMX512 RDM GD32F103Rx GD32F107Rx GD32F207Rx GD32F407Rx">
+<meta name="description content="GigaDevice MCU GD32F Art-Net sACN DDP DMX512 RDM GD32F103R GD32F107R GD32F207R GD32F207V GD32F407R">
 <meta name="author" content="Arjan van Vught">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -41,43 +41,113 @@
     <th>Flash (KB)</th>
     <th>SRAM (KB)</th>
     <th>U(S)ART</th>
-    <th>Ethernet</th>
+    <th>RDM Responder</th>
+    <th>RDM Controller</th>
+    <th>Art-Net 4</th>
+    <th>sACN E1.31</th>
+    <th>DDP</th>
+    <th>OSC</th>
+    <th>RDMNet LLRP Only</th>
   </tr>
 
-  <tr>
+  <tr class="text-center-row">
     <td>GD32F103RC</td>
     <td>256</td>
     <td>48</td>
     <td>5</td>
+    <td>√</td>
+    <td>√</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
     <td></td>
   </tr>
 
-  <tr>
+  <tr class="text-center-row">
     <td>GD32F107RC</td>
     <td>256</td>
     <td>96</td>
     <td>5</td>
+    <td></td>
     <td>√</td>
+    <td>√</td>
+    <td>√</td>
+    <td>plannned</td>
+    <td>√</td>
+    <td></td>
   </tr>
 
-  <tr>
+  <tr class="text-center-row">
     <td>GD32F207RG</td>
     <td>1024</td>
     <td>256</td>
     <td>6</td>
+    <td></td>
+    <td>√</td>
+    <td>√</td>
+    <td>√</td>
+    <td>plannned</td>
+    <td></td>
     <td>√</td>
   </tr>
 
-  <tr>
+  <tr class="text-center-row">
+    <td>GD32F207VC</td>
+    <td>256</td>
+    <td>128</td>
+    <td>6</td>
+    <td></td>
+    <td>√</td>
+    <td>√</td>
+    <td>√</td>
+    <td>plannned</td>
+    <td></td>
+    <td>√</td>
+  </tr>
+
+  <tr class="text-center-row">
     <td>GD32F407RE</td>
     <td>512</td>
     <td>192</td>
     <td>6</td>
+    <td></td>
+    <td>√</td>
+    <td>√</td>
+    <td>√</td>
+    <td>plannned</td>
+    <td></td>
     <td>√</td>
   </tr>
 
 </table>
 
+<h3>Timers used</h3>
+
+<table>
+<tr>
+  <th>Timer</th>
+  <th>Description</th>
+  <th>Implemenation note</th>
+</tr>
+
+<tr>
+  <td>5</td>
+  <td>delay micros</td
+  <td></td>
+</tr>
+
+<tr>
+  <td>8</td>
+  <td>micros Slave -> ITI2</td>
+  <td rowspan="2">207 and 407 only</td>
+</tr>
+
+<tr>
+  <td>9</td>
+  <td>micros Master -> TIMER9_TRGO</td>
+</tr>
+</table>
 
 		<h2>Work in progress <a href="https://github.com/vanvught/gd32-dmx.org" target="_blank" rel="noopener noreferrer">https://github.com/vanvught/gd32-dmx.org</a></h2>
 	</div>

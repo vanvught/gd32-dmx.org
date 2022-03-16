@@ -57,8 +57,8 @@
 
       <tr>
         <td>GD32F4xx</td>
-        <td>8</td>
-        <td></td>
+        <td>6/8</td>
+        <td>407->6, 450->8</td>
       </tr>
     </table>
 
@@ -82,10 +82,10 @@
     <td>DMA 0</td>
     <td></td>
     <td class="uart_tx">USART2_TX</td>
-    <td>USART2_RX</td>
+    <td></td>
     <td class="uart_tx">USART0_TX</td>
-    <td>USART0_RX</td>
-    <td>USART1_RX</td>
+    <td></td>
+    <td></td>
     <td class="uart_tx">USART1_TX</td>
     <td></td>
   </tr>
@@ -94,7 +94,7 @@
     <td>DMA 1</td>
     <td></td>
     <td></td>
-    <td>UART3_RX</td>
+    <td></td>
     <td></td>
     <td class="uart_tx">UART3_TX</td>
     <td></td>
@@ -106,11 +106,11 @@
     <td rowspan="2">GD32F20x</td>
     <td>DMA 0</td>
     <td></td>
-    <td>USART2_RX</td>
+    <td></td>
     <td class="uart_tx">USART2_TX</td>
     <td class="uart_tx">USART0_TX</td>
-    <td>USART0_RX</td>
-    <td>USART1_RX</td>
+    <td></td>
+    <td></td>
     <td class="uart_tx">USART1_TX</td>
     <td></td>
   </tr>
@@ -118,11 +118,11 @@
   <tr>
     <td>DMA 1</td>
     <td></td>
-    <td>UART4_RX<br>UART7_RX</td>
-    <td>UART3_RX<br>UART6_RX</td>
+    <td></td>
+    <td></td>
     <td class="uart_tx">UART4_TX<br>UART7_TX</td>
     <td class="uart_tx">UART3_TX<br>UART6_TX</td>
-    <td>USART5_RX</td>
+    <td></td>
     <td class="uart_tx">USART5_TX</td>
     <td></td>
   </tr>
@@ -159,6 +159,35 @@ The above is defined in the files:
 <li>lib-gd32/include/mcu/gd32f20x_mcu.h</li>
 <li>lib-gd32/include/mcu/gd32f407_mcu.h</li>
 </ul>
+
+<h3>Timers used</h3>
+
+<table>
+<tr>
+  <th>Timer</th>
+  <th>Description</th>
+</tr>
+
+<tr>
+  <td>1</td>
+  <td>Transmit</td>
+</tr>
+
+<tr>
+  <td>2</td>
+  <td>Receive Slot time-out Port 0,1,2,3</td>
+</tr>
+
+<tr>
+  <td>3</td>
+  <td>Receive Slot time-out Port 4,5,6,7</td>
+</tr>
+
+<tr>
+  <td>6</td>
+  <td>Receive 1 second interrupt</td>
+</tr>
+</table>
 
 		<h2>Work in progress <a href="https://github.com/vanvught/gd32-dmx.org" target="_blank" rel="noopener noreferrer">https://github.com/vanvught/gd32-dmx.org</a></h2>
 	</div>

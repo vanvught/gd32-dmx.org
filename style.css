@@ -27,6 +27,13 @@ table, th, td {
 */
 td {
 /*		text-align: center; */
+/*		vertical-align: middle; */
+}
+
+.text-center-row>th,
+.text-center-row>td {
+  text-align: center;
+	vertical-align: middle;
 }
 
 .pin {
