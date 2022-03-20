@@ -35,6 +35,138 @@
 	</div>
 
   <div style="padding-left: 16px">
+<h2>SPI/I2S</h2>
+As the SPI speed cannot be specified exaclty, the I2S peripheral is used instead.
+<br>
+SPI speed = I2S bitrate = Audio sample rate * number of bits per channel * number of channels.
+<br>
+Therefore, the Audio sample rate = SPI speed / 16 / 2.
+<br>
+For the WS2812B type protocol, the SPI speed must be (close to) 6.4Mhz.
+<h3>Clock tree</h3>
+<table>
+  <tr>
+    <th>MCU</th>
+    <th>CK_SYS</th>
+    <th>HXTAL</th>
+    <th>PREDV1</th>
+    <th>PLL2MF</th>
+    <th>CK_PLL2</th>
+    <th>x2</th>
+    <th>CK_I2S</th>
+  </tr>
+
+  <tr class="text-center-row">
+    <td>GD32F103RC</td>
+    <td>108MHz</d>
+    <td>n.a.</td>
+    <td>n.a.</td>
+    <td>n.a.</td>
+    <td>n.a.</td>
+    <td>n.a.</td>
+    <td>108MHz</td>
+  </tr>
+
+  <tr class="text-center-row">
+    <td>GD32F107RC</td>
+    <td></d>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+
+  <tr class="text-center-row">
+    <td>GD32F207RG</td>
+    <td>-</d>
+    <td>25MHz</td>
+    <td>/5</td>
+    <td>x16</td>
+    <td>80Mhz</td>
+    <td>√</td>
+    <td>160Mhz</td>
+  </tr>
+
+  <tr class="text-center-row">
+    <td>GD32F207VC</td>
+    <td>-</d>
+    <td>25MHz</td>
+    <td>/5</td>
+    <td>x16</td>
+    <td>80Mhz</td>
+    <td>√</td>
+    <td>160Mhz</td>
+  </tr>
+
+  <tr class="text-center-row">
+    <td>GD32F407RE</td>
+    <td></d>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<h3>I2S prescaler Configuration</h3>
+<ul>
+  <li>Frame format: DT16B CH16B</li>
+  <ul>
+    <li>Number of bit per channel: 16</i>
+    <li>Number of channels: 2</li>
+  </ul>
+  <li>Audio sample rate: 200kHz = 6400000 Hz / 16 / 2</li>
+  <li>MCK out: Disable</li>
+</ul>
+I2S bitrate = CK_I2S / (DIV * 2 + OF)
+<table>
+  <tr>
+    <th>MCU</th>
+    <th>CK_I2S</th>
+    <th>DIV</th>
+    <th>OF</th>
+    <th>I2S bitrate</th>
+  </tr>
+
+  <tr class="text-center-row">
+    <td>GD32F103RC</td>
+    <td>108MHz</td>
+    <td>8</td>
+    <td>1</td>
+    <td>6.352.941</td>
+  </tr>
+
+  <tr class="text-center-row">
+    <td>GD32F107RC</td>
+    <td></td>
+  </tr>
+
+  <tr class="text-center-row">
+    <td>GD32F207RG</td>
+    <td>160Mhz</td>
+    <td>12</td>
+    <td>1</td>
+    <td>6.400.000</td>
+  </tr>
+
+  <tr class="text-center-row">
+    <td>GD32F207VC</td>
+    <td>160Mhz</td>
+    <td>12</td>
+    <td>1</td>
+    <td>6.400.000</td>
+  </tr>
+
+  <tr class="text-center-row">
+    <td>GD32F407RE</td>
+    <td></td>
+  </tr>
+</table>
+
+<h2>Timer->DMA->GPIO</h2>
+
 		<h2>Work in progress <a href="https://github.com/vanvught/gd32-dmx.org" target="_blank" rel="noopener noreferrer">https://github.com/vanvught/gd32-dmx.org</a></h2>
 	</div>
 
