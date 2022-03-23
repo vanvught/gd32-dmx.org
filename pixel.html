@@ -38,7 +38,7 @@
 <h2>SPI/I2S</h2>
 As the SPI speed cannot be specified exaclty, the I2S peripheral is used instead.
 <br>
-SPI speed = I2S bitrate = Audio sample rate * number of bits per channel * number of channels.
+<b>SPI speed</b> = <b>I2S bitrate</b> = Audio sample rate * number of bits per channel * number of channels.
 <br>
 Therefore, the Audio sample rate = SPI speed / 16 / 2.
 <br>
@@ -69,12 +69,13 @@ For the WS2812B type protocol, the SPI speed must be (close to) 6.4Mhz.
 
   <tr class="text-center-row">
     <td>GD32F107RC</td>
-    <td></d>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>-</d>
+    <td>25MHz</td>
+    <td>/5</td>
+    <td>x16</td>
+    <td>80Mhz</td>
+    <td>√</td>
+    <td>160Mhz</td>
   </tr>
 
   <tr class="text-center-row">
@@ -100,13 +101,25 @@ For the WS2812B type protocol, the SPI speed must be (close to) 6.4Mhz.
   </tr>
 
   <tr class="text-center-row">
+    <td>GD32F303RC</td>
+    <td>120MHz</d>
+    <td>n.a.</td>
+    <td>n.a.</td>
+    <td>n.a.</td>
+    <td>n.a.</td>
+    <td>n.a.</td>
+    <td>120MHz</td>
+  </tr>
+
+  <tr class="text-center-row">
     <td>GD32F407RE</td>
-    <td></d>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>-</d>
+    <td>25MHz</td>
+    <td>/5</td>
+    <td>x16</td>
+    <td>80Mhz</td>
+    <td>√</td>
+    <td>160Mhz</td>
   </tr>
 </table>
 
@@ -140,7 +153,10 @@ I2S bitrate = CK_I2S / (DIV * 2 + OF)
 
   <tr class="text-center-row">
     <td>GD32F107RC</td>
-    <td></td>
+    <td>160Mhz</td>
+    <td>12</td>
+    <td>1</td>
+    <td>6.400.000</td>
   </tr>
 
   <tr class="text-center-row">
@@ -160,8 +176,19 @@ I2S bitrate = CK_I2S / (DIV * 2 + OF)
   </tr>
 
   <tr class="text-center-row">
+      <td>GD32F303RC</td>
+      <td>120MHz</td>
+      <td>9</td>
+      <td>1</td>
+      <td>6.315.790</td>
+    </tr>
+
+  <tr class="text-center-row">
     <td>GD32F407RE</td>
-    <td></td>
+    <td>160Mhz</td>
+    <td>12</td>
+    <td>1</td>
+    <td>6.400.000</td>
   </tr>
 </table>
 
