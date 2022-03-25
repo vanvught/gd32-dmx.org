@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>GD32Fxxx DMX512 RDM Pixel</title>
+<meta name="description content="GigaDevice MCU GD32F Art-Net DMX512 RDM GD32F103R GD32F107R GD32F207R GD32F303R GD32F207V GD32F407R">
+<meta name="author" content="Arjan van Vught">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css" type="text/css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-018KBY2JV9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-018KBY2JV9');
+</script>
+<script src="https://kit.fontawesome.com/37a6441831.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div class="topnav" id="myTopnav">
+		<a href="index.html" class="active">Home</a>
+		<a href="dev-board.html">Dev-board</a>
+		<a href="bootloader.html">Bootloader TFTP</a>
+		<a href="dmx512.html">DMX512</a>
+    <a href="rdm.html" class="active">RDM</a>
+		<a href="pixel.html">Pixel</a>
+    <a href="ethernet.html">Ethernet</a>
+		<a href="github.html">GitHub</a>
+		<a href="contact.html">Contact</a>
+		<a href="https://paypal.me/AvanVught?locale.x=nl_NL">PayPal.Me Donate</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i></a>
+	</div>
+
+  <div style="padding-left: 16px">
+    <h3>Supported PIDs</h3>
+    <table>
+    <thead>
+    	<tr>
+    		<td>PID</td>
+    		<td>GET</td>
+    		<td>SET</td>
+    		<td>Implementation note</td>
+    	</tr>
+    </thead>
+    <tbody>
+    	<tr>
+    		<td>E120_DEVICE_INFO</td>
+    		<td>√</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_DEVICE_MODEL_DESCRIPTION</td>
+    		<td>√</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_MANUFACTURER_LABEL</td>
+    		<td>√</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_DEVICE_LABEL</td>
+    		<td>√</td>
+    		<td>√</td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_FACTORY_DEFAULTS</td>
+    		<td>√</td>
+    		<td>√</td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_IDENTIFY_DEVICE</td>
+    		<td>√</td>
+    		<td>√</td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_RESET_DEVICE</td>
+    		<td></td>
+    		<td>√</td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_SUPPORTED_PARAMETERS</td>
+    		<td>√</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_PRODUCT_DETAIL_ID_LIST</td>
+    		<td>√</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_LANGUAGE_CAPABILITIES</td>
+    		<td>√</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_LANGUAGE</td>
+    		<td>√</td>
+    		<td>√</td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_SOFTWARE_VERSION_LABEL</td>
+    		<td>√</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_BOOT_SOFTWARE_VERSION_ID</td>
+    		<td>√</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_BOOT_SOFTWARE_VERSION_LABEL</td>
+    		<td>√</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_DMX_PERSONALITY</td>
+    		<td>√</td>
+    		<td>√</td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_DMX_PERSONALITY_DESCRIPTION</td>
+    		<td>√</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_DMX_START_ADDRESS</td>
+    		<td>√</td>
+    		<td>√</td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_SLOT_INFO</td>
+    		<td>√</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_SLOT_DESCRIPTION</td>
+    		<td>√</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_SENSOR_DEFINITION</td>
+    		<td>√</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_SENSOR_VALUE</td>
+    		<td>√</td>
+    		<td>√</td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_RECORD_SENSORS</td>
+    		<td></td>
+    		<td>√</td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_DEVICE_HOURS</td>
+    		<td>√</td>
+    		<td>√</td>
+    		<td>SET is locked</td>
+    	</tr>
+    	<tr>
+    		<td>E120_DISPLAY_INVERT</td>
+    		<td>√</td>
+    		<td>√</td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_DISPLAY_LEVEL</td>
+    		<td>√</td>
+    		<td>√</td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_REAL_TIME_CLOCK</td>
+    		<td>√</td>
+    		<td>√</td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_POWER_STATE</td>
+    		<td>√</td>
+    		<td>√</td>
+    		<td>Not all options are implemented</td>
+    	</tr>
+    	<tr>
+    		<td>E120_PERFORM_SELFTEST</td>
+    		<td>√</td>
+    		<td>√</td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E120_SELF_TEST_DESCRIPTION</td>
+    		<td>√</td>
+    		<td></td>
+    		<td></td>
+    	</tr>
+    	<tr>
+    		<td>E137_1_IDENTIFY_MODE</td>
+    		<td>√</td>
+    		<td>√</td>
+    		<td></td>
+    	</tr>
+    </tbody>
+    </table>
+
+		<h2>Work in progress <a href="https://github.com/vanvught/gd32-dmx.org" target="_blank" rel="noopener noreferrer">https://github.com/vanvught/gd32-dmx.org</a></h2>
+	</div>
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
