@@ -45,6 +45,27 @@ Therefore, the Audio sample rate = SPI speed / 16 / 2.
 <br>
 For the WS2812B type protocol, the SPI speed must be (close to) 6.4Mhz.
 <h3>Clock tree</h3>
+
+<table>
+  <tr>
+    <th>MCU</th>
+    <th>CK_SYS</th>
+    <th>CK_I2S</th>
+  </tr>
+  <tr class="text-center-row">
+    <td>GD32F103RC</td>
+    <td>108MHz</d>
+
+    <td>108MHz</td>
+  </tr>
+  <tr class="text-center-row">
+    <td>GD32F303RC</td>
+    <td>120MHz</d>
+    <td>120MHz</td>
+  </tr>
+</table>
+
+
 <table>
   <tr>
     <th>MCU</th>
@@ -55,17 +76,6 @@ For the WS2812B type protocol, the SPI speed must be (close to) 6.4Mhz.
     <th>CK_PLL2</th>
     <th>x2</th>
     <th>CK_I2S</th>
-  </tr>
-
-  <tr class="text-center-row">
-    <td>GD32F103RC</td>
-    <td>108MHz</d>
-    <td>n.a.</td>
-    <td>n.a.</td>
-    <td>n.a.</td>
-    <td>n.a.</td>
-    <td>n.a.</td>
-    <td>108MHz</td>
   </tr>
 
   <tr class="text-center-row">
@@ -101,27 +111,22 @@ For the WS2812B type protocol, the SPI speed must be (close to) 6.4Mhz.
     <td>160Mhz</td>
   </tr>
 
-  <tr class="text-center-row">
-    <td>GD32F303RC</td>
-    <td>120MHz</d>
-    <td>n.a.</td>
-    <td>n.a.</td>
-    <td>n.a.</td>
-    <td>n.a.</td>
-    <td>n.a.</td>
-    <td>120MHz</td>
-  </tr>
+</table>
 
-  <tr class="text-center-row">
-    <td>GD32F407RE</td>
-    <td>-</d>
-    <td>25MHz</td>
-    <td>/5</td>
-    <td>x16</td>
-    <td>80Mhz</td>
-    <td>√</td>
-    <td>160Mhz</td>
+<table>
+  <tr>
+    <th>MCU</th>
+    <th>CK_SYS</th>
+    <th>HXTAL</th>
+    <th>CK_I2S</th>
   </tr>
+<tr class="text-center-row">
+  <td>GD32F407RE</td>
+  <td></d>
+  <td>25MHz</td>
+  <td></td>
+  <td></td>
+</tr>
 </table>
 
 <h3>I2S prescaler Configuration</h3>
