@@ -7,7 +7,8 @@ body {
 	/* currently ems cause chrome bug misinterpreting rems on body element */
 	line-height: 1.6;
 	font-weight: 400;
-	font-family: "Roboto", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Roboto", "HelveticaNeue", "Helvetica Neue", Helvetica,
+		Arial, sans-serif;
 }
 
 a {
@@ -19,20 +20,22 @@ a {
 a:focus {
 	outline: thin dotted;
 }
+
 /*
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
 */
-td {
-/*		text-align: center; */
-/*		vertical-align: middle; */
-}
 
-.text-center-row>th,
-.text-center-row>td {
-  text-align: center;
+/*
+td {
+		text-align: center; 
+		vertical-align: middle; 
+}
+*/
+.text-center-row>th, .text-center-row>td {
+	text-align: center;
 	vertical-align: middle;
 }
 
@@ -43,22 +46,22 @@ td {
 
 .gnd {
 	background-color: #FAFAFA;
-/*	text-align: center; */
+	/*	text-align: center; */
 }
 
 .uart {
 	background-color: #4169E1;
-/*	text-align: center; */
+	/*	text-align: center; */
 }
 
 .spi {
 	background-color: #00F000;
-/*	text-align: center; */
+	/*	text-align: center; */
 }
 
 .uart_tx {
 	background-color: #4169E1;
-/*	text-align: center; */
+	/*	text-align: center; */
 }
 
 /* Add a black background color to the top navigation */

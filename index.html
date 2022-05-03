@@ -8,15 +8,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css" type="text/css" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-018KBY2JV9"></script>
-<script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-018KBY2JV9" type="text/javascript"></script>
+<script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-018KBY2JV9');
 </script>
-<script src="https://kit.fontawesome.com/37a6441831.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/37a6441831.js" crossorigin="anonymous" type="text/javascript"></script>
 </head>
 
 <body>
@@ -25,189 +25,219 @@
 		<a href="dev-board.html">Dev-board</a>
 		<a href="bootloader.html">Bootloader TFTP</a>
 		<a href="dmx512.html">DMX512</a>
-    <a href="rdm.html">RDM</a>
+    	<a href="rdm.html">RDM</a>
 		<a href="pixel.html">Pixel</a>
-    <a href="ethernet.html">Ethernet</a>
+    	<a href="ethernet.html">Ethernet</a>
 		<a href="github.html">GitHub</a>
 		<a href="contact.html">Contact</a>
 		<a href="https://paypal.me/AvanVught?locale.x=nl_NL">PayPal.Me Donate</a>
 		<a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i></a>
 	</div>
 
-  <div style="padding-left: 16px">
-    Supported MCU's:
-<table>
-  <tr>
-    <th>MCU</th>
-    <th>RDM Responder</th>
-    <th>RDM Controller</th>
-    <th>Art-Net 4</th>
-    <th>sACN E1.31</th>
-    <th>DDP</th>
-    <th>OSC</th>
-    <th>RDMNet LLRP Only</th>
-  </tr>
+	<div style="padding-left: 16px">
+		Supported MCU's:
+		<table>
+			<tr>
+				<th>MCU</th>
+				<th>RDM Responder</th>
+				<th>RDM Controller</th>
+				<th>Art-Net 4</th>
+				<th>sACN E1.31</th>
+				<th>DDP</th>
+				<th>OSC</th>
+				<th>RDMNet LLRP Only</th>
+			</tr>
 
-  <tr class="text-center-row">
-    <td>GD32F103RC</td>
-    <td>√</td>
-    <td>√</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
+			<tr class="text-center-row">
+				<td>GD32F103RC</td>
+				<td>√</td>
+				<td>√</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
 
-  <tr class="text-center-row">
-    <td>GD32F107RC</td>
-    <td></td>
-    <td>√</td>
-    <td>√</td>
-    <td>√</td>
-    <td>plannned</td>
-    <td>√</td>
-    <td></td>
-  </tr>
+			<tr class="text-center-row">
+				<td>GD32F107RC</td>
+				<td></td>
+				<td>√</td>
+				<td>√</td>
+				<td>√</td>
+				<td>planned</td>
+				<td>√</td>
+				<td></td>
+			</tr>
 
-  <tr class="text-center-row">
-    <td>GD32F207RG</td>
-    <td></td>
-    <td>√</td>
-    <td>√</td>
-    <td>√</td>
-    <td>plannned</td>
-    <td></td>
-    <td>√</td>
-  </tr>
+			<tr class="text-center-row">
+				<td>GD32F207RG</td>
+				<td></td>
+				<td>√</td>
+				<td>√</td>
+				<td>√</td>
+				<td>planned</td>
+				<td></td>
+				<td>√</td>
+			</tr>
 
-  <tr class="text-center-row">
-    <td>GD32F207VC</td>
-    <td></td>
-    <td>√</td>
-    <td>√</td>
-    <td>√</td>
-    <td>plannned</td>
-    <td></td>
-    <td>√</td>
-  </tr>
+			<tr class="text-center-row">
+				<td>GD32F207VC</td>
+				<td></td>
+				<td>√</td>
+				<td>√</td>
+				<td>√</td>
+				<td>planned</td>
+				<td></td>
+				<td>√</td>
+			</tr>
 
-  <tr class="text-center-row">
-    <td>GD32F303RC</td>
-    <td>√</td>
-    <td>√</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
+			<tr class="text-center-row">
+				<td>GD32F303RC</td>
+				<td>√</td>
+				<td>√</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
 
-  <tr class="text-center-row">
-    <td>GD32F407RE</td>
-    <td></td>
-    <td>√</td>
-    <td>√</td>
-    <td>√</td>
-    <td>plannned</td>
-    <td></td>
-    <td>√</td>
-  </tr>
-</table>
-<br>
-<table>
-  <tr>
-    <th>MCU</th>
-    <th></th>
-    <th>Fmax</th>
-    <th>Flash (kB)</th>
-    <th>SRAM (kB)</th>
-    <th>U(S)ART</th>
-  </tr>
+			<tr class="text-center-row">
+				<td>GD32F407RE</td>
+				<td></td>
+				<td>√</td>
+				<td>√</td>
+				<td>√</td>
+				<td>planned</td>
+				<td></td>
+				<td>√</td>
+			</tr>
 
-  <tr class="text-center-row">
-    <td>GD32F103RC</td>
-    <td>HD</td>
-    <td>108MHz</d>
-    <td>256</td>
-    <td>48</td>
-    <td>5</td>
-  </tr>
+			<tr class="text-center-row">
+				<td>GD32F450VI</td>
+				<td></td>
+				<td></td>
+				<td>√</td>
+				<td>√</td>
+				<td>planned</td>
+				<td></td>
+				<td>√</td>
+			</tr>
 
-  <tr class="text-center-row">
-    <td>GD32F107RC</td>
-    <td>CL</td>
-    <td>108MHz</d>
-    <td>256</td>
-    <td>96</td>
-    <td>5</td>
-  </tr>
+		</table>
+		<br>
+		<table>
+			<tr>
+				<th>MCU</th>
+				<th></th>
+				<th>Fmax</th>
+				<th>Flash (kB)</th>
+				<th>SRAM (kB)</th>
+				<th>U(S)ART</th>
+			</tr>
 
-  <tr class="text-center-row">
-    <td>GD32F207RG</td>
-    <td>CL</td>
-    <td>120MHz</d>
-    <td>1024</td>
-    <td>256</td>
-    <td>6</td>
-  </tr>
+			<tr class="text-center-row">
+				<td>GD32F103RC</td>
+				<td>HD</td>
+				<td>108MHz</td>
+				<td>256</td>
+				<td>48</td>
+				<td>5</td>
+			</tr>
 
-  <tr class="text-center-row">
-    <td>GD32F207VC</td>
-    <td>CL</td>
-    <td>120MHz</d>
-    <td>256</td>
-    <td>128</td>
-    <td>6</td>
-  </tr>
+			<tr class="text-center-row">
+				<td>GD32F107RC</td>
+				<td>CL</td>
+				<td>108MHz</td>
+				<td>256</td>
+				<td>96</td>
+				<td>5</td>
+			</tr>
 
-  <tr class="text-center-row">
-    <td>GD32F303RC</td>
-    <td>HD</td>
-    <td>120MHz</d>
-    <td>256</td>
-    <td>48</td>
-    <td>5</td>
-  </tr>
+			<tr class="text-center-row">
+				<td>GD32F207RG</td>
+				<td>CL</td>
+				<td>120MHz</td>
+				<td>1024</td>
+				<td>256</td>
+				<td>6</td>
+			</tr>
 
-  <tr class="text-center-row">
-    <td>GD32F407RE</td>
-    <td></td>
-    <td>200MHz</d>
-    <td>512</td>
-    <td>192</td>
-    <td>6</td>
-  </tr>
-</table>
+			<tr class="text-center-row">
+				<td>GD32F207VC</td>
+				<td>CL</td>
+				<td>120MHz</td>
+				<td>256</td>
+				<td>128</td>
+				<td>6</td>
+			</tr>
 
-<h3>Timers used</h3>
+			<tr class="text-center-row">
+				<td>GD32F303RC</td>
+				<td>HD</td>
+				<td>120MHz</td>
+				<td>256</td>
+				<td>48</td>
+				<td>5</td>
+			</tr>
 
-<table>
-<tr>
-  <th>Timer</th>
-  <th>Description</th>
-  <th>Implemenation note</th>
-</tr>
+			<tr class="text-center-row">
+				<td>GD32F407RE</td>
+				<td></td>
+				<td>168MHz</td>
+				<td>512</td>
+				<td>192</td>
+				<td>6</td>
+			</tr>
 
-<tr>
-  <td>5</td>
-  <td>delay micros</td
-  <td></td>
-</tr>
+			<tr class="text-center-row">
+				<td>GD32F450VI</td>
+				<td></td>
+				<td>200MHz</td>
+				<td>2048</td>
+				<td>512</td>
+				<td>8</td>
+			</tr>
+		</table>
 
-<tr>
-  <td>8</td>
-  <td>micros Slave -> ITI2</td>
-  <td rowspan="2">207 and 407 only</td>
-</tr>
+		<h3>Timers used</h3>
 
-<tr>
-  <td>9</td>
-  <td>micros Master -> TIMER9_TRGO</td>
-</tr>
-</table>
+		<table>
+			<tr>
+				<th>Timer</th>
+				<th>Description</th>
+				<th>Implementation note</th>
+			</tr>
 
-		<h2>Work in progress <a href="https://github.com/vanvught/gd32-dmx.org" target="_blank" rel="noopener noreferrer">https://github.com/vanvught/gd32-dmx.org</a></h2>
+			<tr>
+				<td>4</td>
+				<td>micros</td>
+				<td>32-bit 4xx only</td>
+			</tr>
+
+			<tr>
+				<td>5</td>
+				<td>delay micros</td>
+				<td></td>
+			</tr>
+
+			<tr>
+				<td>8</td>
+				<td>micros Slave -> ITI2</td>
+				<td rowspan="2">2x 16-bit 207 only</td>
+			</tr>
+
+			<tr>
+				<td>9</td>
+				<td>micros Master -> TIMER9_TRGO</td>
+			</tr>
+		</table>
+
+		<h2>
+			Work in progress <a href="https://github.com/vanvught/gd32-dmx.org"
+				target="_blank" rel="noopener noreferrer">https://github.com/vanvught/gd32-dmx.org</a>
+		</h2>
 	</div>
 
 	<script type="text/javascript" src="script.js"></script>

@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <title>Development board</title>
-<meta name="description content="Development board GigaDevice GD32F GD32F103R GD32F107R GD32F207R GD32F303R GD32F407R">
+<meta name="description" content="Development board GigaDevice GD32F GD32F103R GD32F107R GD32F207R GD32F303R GD32F407R">
 <meta name="author" content="Arjan van Vught">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css" type="text/css" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-018KBY2JV9"></script>
-<script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-018KBY2JV9" type="text/javascript"></script>
+<script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-018KBY2JV9');
 </script>
-<script src="https://kit.fontawesome.com/37a6441831.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/37a6441831.js" crossorigin="anonymous" type="text/javascript"></script>
 </head>
 
 <body>
@@ -25,9 +25,9 @@
 		<a href="dev-board.html" class="active">Dev-board</a>
 		<a href="bootloader.html">Bootloader TFTP</a>
 		<a href="dmx512.html">DMX512</a>
-    <a href="rdm.html">RDM</a>
+	    <a href="rdm.html">RDM</a>
 		<a href="pixel.html">Pixel</a>
-    <a href="ethernet.html">Ethernet</a>
+	    <a href="ethernet.html">Ethernet</a>
 		<a href="github.html">GitHub</a>
 		<a href="contact.html">Contact</a>
 		<a href="https://paypal.me/AvanVught?locale.x=nl_NL">PayPal.Me Donate</a>
@@ -37,7 +37,7 @@
 	<div style="padding-left: 16px">
 		<h2>Development board</h2>
 
-<a href="https://github.com/vanvught/GD32FxxxR-dev-board" target="_blank" rel="noopener noreferrer">GitHub download.</a>
+		<a href="https://github.com/vanvught/GD32FxxxR-dev-board" target="_blank" rel="noopener noreferrer">GitHub download.</a>
 		This board can be used with the GD32F103Rx, GD32F303Rx and the GD32F107Rx, GD32F207Rx, GD32F407Rx (Ethernet) MCU's.
 		<p>Please note that the crystal for the GD32F107Rx, GD32F207Rx and the GD32F407Rx is <b>25MHz</b> and the crystal for the GD32F103Rx and GD32F303Rx is <b>8MHz</b>.</p>
 		<p>The USB is power and DFU.</p>
@@ -264,7 +264,9 @@
 				<td>PA9</td>
 			</tr>
 		</table>
+		
 		<p></p>
+		
 		<table>
 			<tr>
 				<th colspan="2">LED's</th>
@@ -286,7 +288,9 @@
 				<td style="background-color: #FFA500">3V3 PWR</td>
 			</tr>
 		</table>
+		
 		<p></p>
+
 		<table>
 			<tr>
 				<th colspan="2">J5</th>
@@ -355,56 +359,50 @@
 			</tr>
 		</table>
 
+
+
+		<h3>GD32F103Rx GD32F303Rx (only)</h3>
 		<table>
-
-			<h3>GD32F103Rx GD32F303Rx (only)</h3>
-			<table>
-				<tr>
-					<th colspan="5">1x4 Header</th>
-				</tr>
-				<tr>
-					<td></td>
-					<td class="gnd">GND</td>
-					<td class="pin">1</td>
-					<td class="gnd">GND</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td style="background-color: #FFA500">3V3 PWR</td>
-					<td class="pin">2</td>
-					<td style="background-color: #FFA500">3V3 PWR</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td rowspan="2">REMAP[1:0] = 00/01 / AF4</td>
-					<td style="background-color: #EE82EE">I2C1 SCL</td>
-					<td class="pin">3</td>
-					<td class="uart">USART2 RX</td>
-					<td rowspan="2">REMAP = 0 (no remap)</td>
-				</tr>
-				<tr>
-					<td style="background-color: #EE82EE">I2C1 SCA</td>
-					<td class="pin">4</td>
-					<td class="uart">USART2 TX</td>
-				</tr>
-			</table>
-
-			<div></div>
-
-			<script type="text/javascript" src="script.js"></script>
+			<tr>
+				<th colspan="5">1x4 Header</th>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="gnd">GND</td>
+				<td class="pin">1</td>
+				<td class="gnd">GND</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td style="background-color: #FFA500">3V3 PWR</td>
+				<td class="pin">2</td>
+				<td style="background-color: #FFA500">3V3 PWR</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td rowspan="2">REMAP[1:0] = 00/01 / AF4</td>
+				<td style="background-color: #EE82EE">I2C1 SCL</td>
+				<td class="pin">3</td>
+				<td class="uart">USART2 RX</td>
+				<td rowspan="2">REMAP = 0 (no remap)</td>
+			</tr>
+			<tr>
+				<td style="background-color: #EE82EE">I2C1 SCA</td>
+				<td class="pin">4</td>
+				<td class="uart">USART2 TX</td>
+			</tr>
 		</table>
 
+		<script type="text/javascript" src="script.js"></script>
+	
 
 		<h3>GD32F107Rx GD32F207Rx GD32F407Rx (only)</h3>
 
 		<table>
-			<head>
-			</head>
 			<tr>
 				<th colspan="4">External-PHY</th>
 			</tr>
-			<head></head>
 			<tbody>
 				<tr>
 					<td>RMII TXD1</td>
@@ -455,7 +453,7 @@
 	<footer>
 	<p>
 		<a href="images/dev-board.png" target="_blank" rel="noopener noreferrer">
-		<img src="images/dev-board-small.png" style="float:left;width:300px;height:200px;" alt="GD32F Development board">
+		<img src="images/dev-board-small.png" style="float: left; width: 300px; height: 200px;" alt="GD32F Development board">
 	</a>
 	Click on the image for enlarge.
 	</p>
