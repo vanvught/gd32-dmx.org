@@ -36,7 +36,18 @@
 	</div>
 
   <div style="padding-left: 16px">
-		<h2>SPI/I2S</h2>
+		Quick links:
+		<ul>
+		<li><a href="#section1">Timer->DMA->GPIO</a></li>
+		<li><a href="#section2">SPI/I2S</a></li>
+		<li><a href="#section3">Development board 16x 4U, 2x DMX Out</a></li>
+		</ul>
+		
+		<h2 id="section1">Timer->DMA->GPIO</h2>
+		
+		Work in progress
+		
+		<h2 id="section2">SPI/I2S</h2>
 		As the SPI speed cannot be specified exaclty, the I2S peripheral is used instead.
 		<br> <b>SPI speed</b> = <b>I2S bitrate</b> = Audio sample rate * number of bits per channel * number of channels.
 		<br> Therefore, the Audio sample rate = SPI speed / 16 / 2.
@@ -180,8 +191,8 @@
 
 		</table>
 
-		<h2>Timer->DMA->GPIO</h2>
-
+		<h2 id="section3">Development board 16x 4U, 2x DMX Out</h2>
+	
 		<h2>Work in progress <a href="https://github.com/vanvught/gd32-dmx.org" target="_blank" rel="noopener noreferrer">https://github.com/vanvught/gd32-dmx.org</a></h2>
 	</div>
 
