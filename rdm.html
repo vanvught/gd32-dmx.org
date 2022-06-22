@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>GD32Fxxx DMX512 RDM Pixel</title>
-<meta name="description" content="GigaDevice MCU GD32F Art-Net DMX512 RDM GD32F103R GD32F107R GD32F207R GD32F303R GD32F207V GD32F407R">
+<meta name="description" content="GigaDevice MCU GD32F DMX512 RDM RDMNet LLRP GD32F103R GD32F107R GD32F207R GD32F303R GD32F207V GD32F407R GD32F450V">
 <meta name="author" content="Arjan van Vught">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -34,8 +34,8 @@
 		<a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i></a>
 	</div>
 
-  <div style="padding-left: 16px">
-    <h3>Supported PIDs</h3>
+	<div style="padding-left: 16px">
+		<h3>Supported PIDs</h3>
 		<table>
 			<thead>
 				<tr>
@@ -229,7 +229,98 @@
 			</tbody>
 		</table>
 
-		<h2>Work in progress <a href="https://github.com/vanvught/gd32-dmx.org" target="_blank" rel="noopener noreferrer">https://github.com/vanvught/gd32-dmx.org</a></h2>
+		<br> <b>RDMNet LLRP Only</b>
+
+		<table>
+			<thead>
+				<tr>
+					<td>PID</td>
+					<td>GET</td>
+					<td>SET</td>
+					<td>Implementation note</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>E137_2_LIST_INTERFACES</td>
+					<td>√</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>E137_2_INTERFACE_LABEL</td>
+					<td>√</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>E137_2_INTERFACE_HARDWARE_ADDRESS_TYPE1</td>
+					<td>√</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>E137_2_IPV4_DHCP_MODE</td>
+					<td>√</td>
+					<td>√</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>E137_2_IPV4_ZEROCONF_MODE</td>
+					<td>√</td>
+					<td>√</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>E137_2_IPV4_CURRENT_ADDRESS</td>
+					<td>√</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>E137_2_INTERFACE_RENEW_DHCP</td>
+					<td></td>
+					<td>√</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>E137_2_IPV4_STATIC_ADDRESS</td>
+					<td>√</td>
+					<td>√</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>E137_2_INTERFACE_APPLY_CONFIGURATION</td>
+					<td></td>
+					<td>√</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>E137_2_DNS_IPV4_NAME_SERVER</td>
+					<td>√</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>E137_2_IPV4_DEFAULT_ROUTE</td>
+					<td>√</td>
+					<td>√</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>E137_2_DNS_HOSTNAME</td>
+					<td>√</td>
+					<td>√</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>E137_2_DNS_DOMAIN_NAME</td>
+					<td>√</td>
+					<td>√</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 
 	<script type="text/javascript" src="script.js"></script>
