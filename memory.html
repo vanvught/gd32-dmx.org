@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>GD32Fxxx DMX512 RDM Pixel</title>
+<meta name="description" content="GigaDevice MCU GD32F DMX512 RDM RDMNet LLRP GD32F103R GD32F107R GD32F207R GD32F303R GD32F207V GD32F407R GD32F450V">
+<meta name="author" content="Arjan van Vught">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css" type="text/css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-018KBY2JV9" type="text/javascript"></script>
+<script type="text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-018KBY2JV9');
+</script>
+<script src="https://kit.fontawesome.com/37a6441831.js" crossorigin="anonymous" type="text/javascript"></script>
+</head>
+
+<body>
+	<div class="topnav" id="myTopnav">
+		<a href="index.html" class="active">Home</a>
+		<a href="dev-board.html">Dev-board</a>
+		<a href="bootloader.html">Bootloader TFTP</a>
+		<a href="dmx512.html">DMX512</a>
+   		<a href="rdm.html">RDM</a>
+		<a href="pixel.html">Pixel</a>
+   		<a href="ethernet.html">Ethernet</a>
+   		<a href="memory.html" class="active">Memory</a>
+		<a href="github.html">GitHub</a>
+		<a href="contact.html">Contact</a>
+		<a href="https://paypal.me/AvanVught?locale.x=nl_NL">PayPal.Me Donate</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i></a>
+	</div>
+
+	<div style="padding-left: 16px">
+		<h2>Memory map</h2>
+		<h3>RAM</h3>
+		<table>
+		<thead>
+		<tr>
+			<td>Address</td>
+			<td>Size [KB]</td>
+			<td>Description</td>
+			<td>GD32F407RE</td>
+			<td>GD32F450VE</td>
+			<td>GD32F450VI</td>
+		</tr>
+		<tr>
+			<td>0x2003 0000 - 0x2006 FFFF</td>
+			<td>256</td>
+			<td>ADDSRAM</td>
+			<td>N.A.</td>
+			<td>N.A.</td>
+			<td>*(.lightset*)</td>
+		</tr>
+		<tr>
+			<td>0x2002 0000 - 0x2002 FFFF</td>
+			<td>64</td>
+			<td>RAM</td>
+			<td>N.A.</td>
+			<td rowspan="3">192 KB</td>
+			<td rowspan="3">192 KB</td>
+		</tr>
+		<tr>
+			<td>0x2001 C000 - 0x2001 FFFF</td>
+			<td>16</td>
+			<td>RAM</td>
+			<td rowspan="2">128 KB</td>
+		</tr>
+		<tr>
+			<td>0x2000 0000 - 0x2001 BFFF</td>
+			<td>112</td>
+			<td>RAM</td>
+		</tr>
+		<tr>
+			<td>0x1000 0000 - 0x1000 FFFF</td>
+			<td>64</td>
+			<td>TCMSRAM</td>
+			<td>*(.lightset*)<br>*(.network*)</td>
+			<td>*(.lightset*)<br>*(.network*)</td>
+			<td>*(.network*)<br>.heap<br>.stack</td>
+		</tr>
+		</thead>
+		</table>
+	</div>
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

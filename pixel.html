@@ -35,23 +35,62 @@
 		<a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i></a>
 	</div>
 
-  <div style="padding-left: 16px">
-		Quick links:
+	<div style="padding-left: 16px">
+		Key features:
 		<ul>
-		<li><a href="#section1">Timer->DMA->GPIO</a></li>
-		<li><a href="#section2">SPI/I2S</a></li>
-		<li><a href="#section3">Development board 16x 4U, 2x DMX Out</a></li>
+			<li>No FPS limit except for what is with the pixel chip protocol.</li>
+			<li>Full Art-Net 4 implementation including ArtTrigger for running test patterns.</li>
+			<li>Full sACN E1.31 implementation.</li>
+			<li>Discovery and network configuration with RDMNet LLRP Only.</li>
+			<li>Central remote configuration based on UDP readable messages.</li>
+			<li>Configuration management with HTTP/JSON. This includes discovery as well.</li>
+			<li>Enable TFTP server for uploading new firmware.</li>
+		</ul>
+
+		Support for:
+		<ul>
+			<li>All RTZ protocol pixel’s. There are some predefined chip’s, for example WS2812B.
+			When other timing is needed, then it can be set with any low-code and high-code.</li>
+			<li>Clock based protocol pixel’s: APA102, SK9822 and P9813.</li>
 		</ul>
 		
+		Quick links:
+		<ul>
+			<li><a href="#section1">Timer->DMA->GPIO</a></li>
+			<li><a href="#section2">SPI/I2S</a></li>
+			<li><a href="#section3">Development board 16x 4U, 2x DMX Out</a></li>
+		</ul>
+
 		<h2 id="section1">Timer->DMA->GPIO</h2>
-		
-		Work in progress
-		
+
+		There are 2 timer’s used in a master-slave mode. The master is
+		generating the DMA requests and the slave is the pixel buffer counter.
+		There is just one interrupt. This makes it the most efficient
+		implementation possible. For the RTZ protocol there are 3 DMA
+		requests:
+
+		<table>
+			<tr>
+				<td>
+					<ol>
+						<li>Always the HIGH output.</li>
+						<li>The LOW when there must be a 0 code.</li>
+						<li>Always the LOW output after T1H.</li>
+					</ol>
+				</td>
+				<td><img src="images/DMA-T1x.png" style="width:auto;height:80%;" alt="Timer DMA GPIO WS2812B"></td>
+			</tr>
+		</table>
+
+
 		<h2 id="section2">SPI/I2S</h2>
-		As the SPI speed cannot be specified exaclty, the I2S peripheral is used instead.
-		<br> <b>SPI speed</b> = <b>I2S bitrate</b> = Audio sample rate * number of bits per channel * number of channels.
-		<br> Therefore, the Audio sample rate = SPI speed / 16 / 2.
-		<br> For the WS2812B type protocol, the SPI speed must be (close to) 6.4Mhz.
+		
+		As the SPI speed cannot be specified exaclty, the I2S peripheral is
+		used instead. <br> <b>SPI speed</b> = <b>I2S bitrate</b> = Audio
+		sample rate * number of bits per channel * number of channels. <br>
+		Therefore, the Audio sample rate = SPI speed / 16 / 2. <br> For
+		the WS2812B type protocol, the SPI speed must be (close to) 6.4Mhz.
+		
 		<h3>Clock tree</h3>
 
 		<table>
@@ -192,8 +231,11 @@
 		</table>
 
 		<h2 id="section3">Development board 16x 4U, 2x DMX Out</h2>
-	
-		<h2>Work in progress <a href="https://github.com/vanvught/gd32-dmx.org" target="_blank" rel="noopener noreferrer">https://github.com/vanvught/gd32-dmx.org</a></h2>
+
+		<h2>
+			Work in progress <a href="https://github.com/vanvught/gd32-dmx.org"
+				target="_blank" rel="noopener noreferrer">https://github.com/vanvught/gd32-dmx.org</a>
+		</h2>
 	</div>
 
 	<script type="text/javascript" src="script.js"></script>
