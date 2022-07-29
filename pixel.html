@@ -78,19 +78,19 @@
 						<li>Always the LOW output after T1H.</li>
 					</ol>
 				</td>
-				<td><img src="images/pixel-dma.png" style="width:auto;height:80%;" alt="Timer DMA GPIO WS2812B"></td>
+				<td><img src="images/pixel-dma.png" style="width: auto; height: 80%;" alt="Timer DMA GPIO WS2812B"></td>
 			</tr>
 		</table>
 
 
 		<h2 id="section2">SPI/I2S</h2>
-		
-		As the SPI speed cannot be specified exaclty, the I2S peripheral is
-		used instead. <br> <b>SPI speed</b> = <b>I2S bitrate</b> = Audio
-		sample rate * number of bits per channel * number of channels. <br>
-		Therefore, the Audio sample rate = SPI speed / 16 / 2. <br> For
-		the WS2812B type protocol, the SPI speed must be (close to) 6.4Mhz.
-		
+
+		As the SPI speed cannot be specified exaclty, the I2S peripheral is used instead.
+		<b>SPI speed</b> = <b>I2S bitrate</b> = Audio sample rate * number of
+		bits per channel * number of channels. Therefore, the Audio sample
+		rate = SPI speed / 16 / 2. For the WS2812B type protocol, the SPI
+		speed must be (close to) 6.4Mhz.
+
 		<h3>Clock tree</h3>
 
 		<table>
