@@ -68,7 +68,7 @@ table, th, td {
 			<td>64</td>
 			<td>RAM</td>
 			<td>N.A.</td>
-			<td rowspan="3">192 KB</td>
+			<td rowspan="3">192 KB<br>*(.lightset*)</td>
 			<td rowspan="3">192 KB</td>
 		</tr>
 		<tr>
@@ -86,8 +86,8 @@ table, th, td {
 			<td>0x1000 0000 - 0x1000 FFFF</td>
 			<td>64</td>
 			<td>TCMSRAM</td>
-			<td>*(.lightset*)<br>*(.network*)</td>
-			<td>*(.lightset*)<br>*(.network*)</td>
+			<td>*(.lightset*)</td>
+			<td>*(.network*)<br>.heap<br>.stack</td>
 			<td>*(.network*)<br>.heap<br>.stack</td>
 		</tr>
 		</thead>
