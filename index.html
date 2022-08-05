@@ -17,6 +17,12 @@
   gtag('config', 'G-018KBY2JV9');
 </script>
 <script src="https://kit.fontawesome.com/37a6441831.js" crossorigin="anonymous" type="text/javascript"></script>
+<style type="text/css">
+table, th, td {
+	border: 1px solid;
+	border-collapse: collapse;
+}
+</style>
 </head>
 
 <body>
@@ -48,12 +54,14 @@
 				<th>PP</th>
 				<th>OSC</th>
 				<th>RDMNet LLRP Only</th>
+				<th>LTC SMPTE</th>
 			</tr>
 
 			<tr class="text-center-row">
 				<td>GD32F103RC</td>
 				<td>√</td>
 				<td>√</td>
+				<td></td>
 				<td></td>
 				<td></td>
 				<td></td>
@@ -72,6 +80,7 @@
 				<td></td>
 				<td>√</td>
 				<td></td>
+				<td></td>
 			</tr>
 
 			<tr class="text-center-row">
@@ -84,6 +93,7 @@
 				<td>planned</td>
 				<td></td>
 				<td>√</td>
+				<td></td>
 			</tr>
 
 			<tr class="text-center-row">
@@ -96,12 +106,14 @@
 				<td>planned</td>
 				<td></td>
 				<td>√</td>
+				<td></td>
 			</tr>
 
 			<tr class="text-center-row">
 				<td>GD32F303RC</td>
 				<td>√</td>
 				<td>√</td>
+				<td></td>
 				<td></td>
 				<td></td>
 				<td></td>
@@ -120,6 +132,7 @@
 				<td>planned</td>
 				<td></td>
 				<td>√</td>
+				<td>planned</td>
 			</tr>
 
 			<tr class="text-center-row">
@@ -132,21 +145,20 @@
 				<td></td>
 				<td></td>
 				<td>√</td>
+				<td></td>
 			</tr>
 
 		</table>
-		<br>
 		DPP = Distributed Display Protocol
 		<br>
 		PP = PixelPusher
-		<br>
+		<br><br>
 		<table>
 			<tr>
-				<th>MCU</th>
-				<th></th>
+				<th colspan="2">MCU</th>
 				<th>Fmax</th>
-				<th>Flash (kB)</th>
-				<th>SRAM (kB)</th>
+				<th>Flash (KB)</th>
+				<th>SRAM (KB)</th>
 				<th>U(S)ART</th>
 			</tr>
 
@@ -223,6 +235,20 @@
 				<th>Implementation note</th>
 			</tr>
 			<tr>
+				<td>1</td>
+				<td><a href="dmx512.html" target="_blank">DMX Transmit</a></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><a href="dmx512.html" target="_blank">DMX Receive</a> / <a href="pixel.html" target="_blank">Pixel GPIO DMA</a></td>
+				<td rowspan="2">Only DMX Transmit can be used together with pixel GPIO DMA</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><a href="dmx512.html" target="_blank">DMX Receive</a> / <a href="pixel.html" target="_blank">Pixel GPIO DMA</a></td>
+			</tr>
+			<tr>
 				<td>4</td>
 				<td>micros</td>
 				<td>32-bit 4xx only</td>
@@ -230,6 +256,11 @@
 			<tr>
 				<td>5</td>
 				<td>delay micros</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td><a href="dmx512.html" target="_blank">DMX Receive</a> / <a href="ltc.html" target="_blank">LTC SMPTE</a></td>
 				<td></td>
 			</tr>
 			<tr>
@@ -241,14 +272,13 @@
 				<td>9</td>
 				<td>micros Master -> TIMER9_TRGO</td>
 			</tr>
+			<tr>
+				<td>11</td>
+				<td><a href="ltc.html" target="_blank">LTC SMPTE</a></td>
+				<td></td>
+			</tr>
 		</table>
-
-		<h2>
-			Work in progress <a href="https://github.com/vanvught/gd32-dmx.org"
-				target="_blank" rel="noopener noreferrer">https://github.com/vanvught/gd32-dmx.org</a>
-		</h2>
 	</div>
-
 	<script type="text/javascript" src="script.js"></script>
 </body>
 
