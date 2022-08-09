@@ -18,9 +18,23 @@
 </script>
 <script src="https://kit.fontawesome.com/37a6441831.js" crossorigin="anonymous" type="text/javascript"></script>
 <style type="text/css">
-table, th, td {
-	border: 1px solid;
-	border-collapse: collapse;
+.divTable{
+	display: table;
+	width: 100%;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableHead {
+	border: 1px solid #999999;
+	display: table-cell;
+	padding: 3px 10px;
+	background-color: gray;
+}
+.divTableCell {
+	border: 1px solid #999999;
+	display: table-cell;
+	padding: 3px 10px;
 }
 </style>
 </head>
@@ -45,85 +59,89 @@ table, th, td {
 	<div style="padding-left: 16px">
 	
 		<h2>Timers used</h2>
-		<table>
-			<tr>
-				<th>Class</th>
-				<th>11</th>
-				<th>?</th>
-				<th>6</th>
-				<th>?</th>
-			</tr>
-			<tr>
-				<td>ArtNetReader</td>
-				<td></td>
-				<td></td>
-				<td>gv_ltc_nUpdatesPerSecond</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>LtcEtcReader</td>
-				<td></td>
-				<td></td>
-				<td>gv_ltc_nUpdatesPerSecond</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>LtcGenerator</td>
-				<td>gv_ltc_bTimeCodeAvailable</td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>LtcMidiSystemRealtime</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td>BPM</td>
-			</tr>
-			<tr>
-				<td>LtcOutputs</td>
-				<td></td>
-				<td>sv_isMidiQuarterFrameMessage</td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>LtcReader</td>
-				<td></td>
-				<td></td>
-				<td>gv_ltc_nUpdatesPerSecond</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>MidiReader</td>
-				<td>gv_ltc_bTimeCodeAvailable</td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>RtpMidiReader</td>
-				<td>gv_ltc_bTimeCodeAvailable</td>
-				<td></td>
-				<td>gv_ltc_nUpdatesPerSecond</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>SystimeReader</td>
-				<td>gv_ltc_bTimeCodeAvailable</td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>TCNetReader</td>
-				<td></td>
-				<td></td>
-				<td>gv_ltc_nUpdatesPerSecond</td>
-				<td></td>
-			</tr>
-		</table>
+
+
+		<div class="divTable">
+<div class="divTableBody">
+<div class="divTableRow">
+<div class="divTableHead">Class</div>
+<div class="divTableHead">11</div>
+<div class="divTableHead">?</div>
+<div class="divTableHead">6</div>
+<div class="divTableHead">?</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">ArtNetReader</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">gv_ltc_nUpdatesPerSecond</div>
+<div class="divTableCell">&nbsp;</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">LtcEtcReader</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">gv_ltc_nUpdatesPerSecond</div>
+<div class="divTableCell">&nbsp;</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">LtcGenerator</div>
+<div class="divTableCell">gv_ltc_bTimeCodeAvailable</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">LtcMidiSystemRealtime</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">BPM</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">LtcOutputs</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">sv_isMidiQuarterFrameMessage</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">LtcReader</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">gv_ltc_nUpdatesPerSecond</div>
+<div class="divTableCell">&nbsp;</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">MidiReader</div>
+<div class="divTableCell">gv_ltc_bTimeCodeAvailable</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">RtpMidiReader</div>
+<div class="divTableCell">gv_ltc_bTimeCodeAvailable</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">gv_ltc_nUpdatesPerSecond</div>
+<div class="divTableCell">&nbsp;</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">SystimeReader</div>
+<div class="divTableCell">gv_ltc_bTimeCodeAvailable</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">TCNetReader</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">gv_ltc_nUpdatesPerSecond</div>
+<div class="divTableCell">&nbsp;</div>
+</div>
+</div>
+</div>
 
 	</div>
 
