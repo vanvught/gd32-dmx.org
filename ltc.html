@@ -18,10 +18,24 @@
 </script>
 <script src="https://kit.fontawesome.com/37a6441831.js" crossorigin="anonymous" type="text/javascript"></script>
 <style type="text/css">
-table, th, td {
-	border: 1px solid;
-	border-collapse: collapse;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
 }
+th {
+  text-align: left;
+  padding: 2px;
+  background-color: lightgray;
+}
+
+td {
+  text-align: left;
+  padding: 2px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
 </style>
 </head>
 
@@ -45,6 +59,7 @@ table, th, td {
 	<div style="padding-left: 16px">
 	
 		<h2>Timers used</h2>
+		<div style="overflow-x:auto;">
 		<table>
 			<tr>
 				<th>Class</th>
@@ -124,6 +139,7 @@ table, th, td {
 				<td></td>
 			</tr>
 		</table>
+	</div>
 
 	</div>
 

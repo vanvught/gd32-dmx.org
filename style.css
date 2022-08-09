@@ -21,19 +21,25 @@ a:focus {
 	outline: thin dotted;
 }
 
-/*
-table, th, td {
-  border: 1px solid black;
+table {
   border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
 }
-*/
+th {
+  text-align: left;
+  padding: 2px;
+  background-color: lightgray;
+}
 
-/*
 td {
-		text-align: center; 
-		vertical-align: middle; 
+  text-align: left;
+  padding: 2px;
 }
-*/
+
+tr:nth-child(even){background-color: #f2f2f2}
+
 .text-center-row>th, .text-center-row>td {
 	text-align: center;
 	vertical-align: middle;
