@@ -13,137 +13,110 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-018KBY2JV9');
 </script>
-<script src="https://kit.fontawesome.com/37a6441831.js" crossorigin="anonymous" type="text/javascript"></script>
-<style type="text/css">
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  border: 1px solid #ddd;
-}
-th {
-  text-align: left;
-  padding: 2px;
-  background-color: lightgray;
-}
-
-td {
-  text-align: left;
-  padding: 2px;
-}
-
-tr:nth-child(even){background-color: #f2f2f2}
-</style>
+<script async src="https://kit.fontawesome.com/37a6441831.js" crossorigin="anonymous" type="text/javascript"></script>
 </head>
 
 <body>
 	<div class="topnav" id="myTopnav">
-		<a href="index.html">Home</a>
+		<a href="index.html">Home</a> 
 		<a href="dev-board.html">Dev-board</a>
-		<a href="bootloader.html">Bootloader TFTP</a>
+		<a href="bootloader.html">Bootloader TFTP</a> 
 		<a href="dmx512.html">DMX512</a>
-   		<a href="rdm.html">RDM</a>
+		<a href="rdm.html">RDM</a>
 		<a href="pixel.html">Pixel</a>
 		<a href="ltc" class="active">LTC SMPTE</a>
-   		<a href="ethernet.html">Ethernet</a>
-   		<a href="memory.html">Memory</a>
+		<a href="ethernet.html">Ethernet</a>
+		<a href="memory.html">Memory</a>
 		<a href="github.html">GitHub</a>
 		<a href="contact.html">Contact</a>
-		<a href="https://paypal.me/AvanVught?locale.x=nl_NL">PayPal.Me Donate</a>
-		<a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i></a>
+		<a href="https://paypal.me/AvanVught?locale.x=nl_NL">PayPal.Me Donate</a> <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i></a>
 	</div>
-
 	<div style="padding-left: 16px">
-	
 		<h2>Timers used</h2>
-		<div style="overflow-x:auto;">
-		<table>
-			<tr>
-				<th>Class</th>
-				<th>11</th>
-				<th>?</th>
-				<th>6</th>
-				<th>?</th>
-			</tr>
-			<tr>
-				<td>ArtNetReader</td>
-				<td></td>
-				<td></td>
-				<td>gv_ltc_nUpdatesPerSecond</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>LtcEtcReader</td>
-				<td></td>
-				<td></td>
-				<td>gv_ltc_nUpdatesPerSecond</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>LtcGenerator</td>
-				<td>gv_ltc_bTimeCodeAvailable</td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>LtcMidiSystemRealtime</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td>BPM</td>
-			</tr>
-			<tr>
-				<td>LtcOutputs</td>
-				<td></td>
-				<td>sv_isMidiQuarterFrameMessage</td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>LtcReader</td>
-				<td></td>
-				<td></td>
-				<td>gv_ltc_nUpdatesPerSecond</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>MidiReader</td>
-				<td>gv_ltc_bTimeCodeAvailable</td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>RtpMidiReader</td>
-				<td>gv_ltc_bTimeCodeAvailable</td>
-				<td></td>
-				<td>gv_ltc_nUpdatesPerSecond</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>SystimeReader</td>
-				<td>gv_ltc_bTimeCodeAvailable</td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>TCNetReader</td>
-				<td></td>
-				<td></td>
-				<td>gv_ltc_nUpdatesPerSecond</td>
-				<td></td>
-			</tr>
-		</table>
+		<div style="overflow-x: auto;">
+			<table>
+				<tr>
+					<th>Class</th>
+					<th>Timer 11</th>
+					<th>Timer 12</th>
+					<th>Timer 6</th>
+					<th>Timer 13</th>
+				</tr>
+				<tr>
+					<td>ArtNetReader</td>
+					<td></td>
+					<td></td>
+					<td>gv_ltc_nUpdatesPerSecond</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>LtcEtcReader</td>
+					<td></td>
+					<td></td>
+					<td>gv_ltc_nUpdatesPerSecond</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>LtcGenerator</td>
+					<td>gv_ltc_bTimeCodeAvailable</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>LtcMidiSystemRealtime</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>BPM</td>
+				</tr>
+				<tr>
+					<td>LtcOutputs</td>
+					<td></td>
+					<td>sv_isMidiQuarterFrameMessage</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>LtcReader</td>
+					<td></td>
+					<td></td>
+					<td>gv_ltc_nUpdatesPerSecond</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>MidiReader</td>
+					<td>gv_ltc_bTimeCodeAvailable</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>RtpMidiReader</td>
+					<td>gv_ltc_bTimeCodeAvailable</td>
+					<td></td>
+					<td>gv_ltc_nUpdatesPerSecond</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>SystimeReader</td>
+					<td>gv_ltc_bTimeCodeAvailable</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>TCNetReader</td>
+					<td></td>
+					<td></td>
+					<td>gv_ltc_nUpdatesPerSecond</td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
 	</div>
-
-	</div>
-
 	<script type="text/javascript" src="script.js"></script>
 </body>
-
 </html>

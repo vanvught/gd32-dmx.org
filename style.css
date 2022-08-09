@@ -34,6 +34,7 @@ th {
 }
 
 td {
+	border: 1px solid;
   text-align: left;
   padding: 2px;
 }
