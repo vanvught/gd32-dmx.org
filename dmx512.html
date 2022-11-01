@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>GD32Fxxx DMX512 RDM Pixel</title>
-<meta name="description" content="GigaDevice MCU GD32F Art-Net sACN DMX512 RDM">
+<meta name="description" content="GigaDevice MCU GD32F Art-Net sACN DMX512 RDM GD32F103 GD32F107 GD32F303 GD32F407 GD32F450">
 <meta name="author" content="Arjan van Vught">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -36,8 +36,77 @@
 	</div>
 
 	<div style="padding-left: 16px">
+		<h3>RDM Data direction GPIO's</h3>
+		Logic level '0' = INPUT, '1' = OUTPUT
+		<div style="overflow-x: auto;">
+			<table>
+			<tr>
+				<td></td>
+				<td>GD32F103RC</td>
+				<td>GD32F107RC</td>
+				<td>GD32F207RG</td>
+				<td>GD32F303RC</td>
+				<td>GD32F407RE</td>
+				<td>GD32F450VI</td>
+				<td>GD32F207C_EVAL</td>
+				<td>BW_OPIDMX4</td>
+				<td>DMX4</td>
+			</tr>
+			<tr>
+				<td>USART0</td>
+				<td>N.A.</td>
+				<td>N.A.</td>
+				<td>N.A.</td>
+				<td>N.A.</td>
+				<td>N.A.</td>
+				<td>N.A.</td>
+				<td>N.A. (2)</td>
+				<td>GPIOA PIN5</td>
+				<td>GPIOA PIN4</td>
+			</tr>
+			<tr>
+				<td>USART2</td>
+				<td>GPIOB PIN10</td>
+				<td>GPIOB PIN10</td>
+				<td>GPIOB PIN10</td>
+				<td>GPIOB PIN10</td>
+				<td>GPIOB PIN10</td>
+				<td>N.A. (1)</td>
+				<td>N.A. (2)</td>
+				<td>GPIOB PIN10</td>
+				<td>GPIOB PIN10</td>
+			</tr>
+			<tr>
+				<td>UART4</td>
+				<td>N.A.</td>
+				<td>N.A.</td>
+				<td>N.A.</td>
+				<td>N.A.</td>
+				<td>N.A.</td>
+				<td>N.A.</td>
+				<td>N.A. (2)</td>
+				<td>GPIOA PIN4</td>
+				<td>GPIOA PIN5</td>
+			</tr>
+			<tr>
+				<td>USART5</td>
+				<td>N.A.</td>
+				<td>N.A.</td>
+				<td>GPIOA PIN11</td>
+				<td>N.A.</td>
+				<td>GPIOA PIN11</td>
+				<td>N.A. (1)</td>
+				<td>N.A. (2)</td>
+				<td>GPIOA PIN11</td>
+				<td>GPIOB PIN14</td>
+			</tr>
+			</table>
+		</div>
+	
 		<h3>U(S)ART DMA Channel's</h3>
-		<table style="font-size: 90%">
+		
+		<div style="overflow-x: auto;">
+		<table>
 			<tr>
 				<td>MCU Family</td>
 				<td></td>
@@ -97,7 +166,30 @@
 				<td></td>
 				<td class="uart_tx">USART5_TX</td>
 				<td></td>
+			</tr>		
+			<tr>
+				<td rowspan="2">GD32F303</td>
+				<td>DMA 0</td>
+				<td></td>
+				<td class="uart_tx">USART2_TX</td>
+				<td></td>
+				<td class="uart_tx">USART0_TX</td>
+				<td></td>
+				<td></td>
+				<td class="uart_tx">USART1_TX</td>
+				<td></td>
 			</tr>
+			<tr>
+				<td>DMA 1</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="uart_tx">UART3_TX</td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>	
 			<tr>
 				<td rowspan="2">GD32F4xx</td>
 				<td>DMA 0</td>
@@ -122,10 +214,13 @@
 				<td class="uart_tx">USART0_TX</td>
 			</tr>
 		</table>
+		</div>
+		
 		<p>The above is defined in the files:</p>
 		<ul>
 			<li>lib-gd32/include/mcu/gd32f10x_mcu.h</li>
 			<li>lib-gd32/include/mcu/gd32f20x_mcu.h</li>
+			<li>lib-gd32/include/mcu/gd32f30x_mcu.h</li>
 			<li>lib-gd32/include/mcu/gd32f4xx_mcu.h</li>
 		</ul>
 
