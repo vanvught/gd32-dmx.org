@@ -11,6 +11,12 @@ body {
 		Arial, sans-serif;
 }
 
+code {
+	font-size: 80%;
+ 	background-color:#EEEEEE;
+ 	font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+}
+
 a {
 	font-weight: normal;
 	text-decoration: none;
