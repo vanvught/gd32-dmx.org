@@ -41,8 +41,8 @@
 		<a href="https://github.com/vanvught/GD32FxxxR-dev-board" target="_blank" rel="noopener noreferrer">GitHub download.</a>
 		This board can be used with the GD32F103Rx, GD32F303Rx and the GD32F107Rx, GD32F207Rx, GD32F407Rx (Ethernet) MCU's.
 		<p>Please note that the crystal for the GD32F107Rx, GD32F207Rx and the GD32F407Rx is <b>25MHz</b> and the crystal for the GD32F103Rx and GD32F303Rx is <b>8MHz</b>.</p>
-		<p>The USB is power and DFU.</p>
-		<p>The <b>2x13 header</b> is pin compatible with the Orange Pi Zero and Raspberry Pi boards.</p>
+		<p>The USB is power and DFU (Ethernet MCU only).</p>
+		<p>The <b>2x13 header</b> is pin compatible with the Orange Pi Zero and Raspberry Pi boards. The <b>1x13 header</b> is pin compatible with the Orange Pi Zero.</p>
 
 		<table>
 			<tr>
@@ -319,7 +319,7 @@
 				<td>PB13</td>
 				<td class="pin">1</td>
 				<td class="pin">2</td>
-				<td>NC</td>
+				<td>PB0</td>
 			</tr>
 			<tr>
 				<td>PB11</td>
@@ -408,7 +408,7 @@
 					<td>RMII TXD1</td>
 					<td class="pin">1</td>
 					<td class="pin">2</td>
-					<td>NC</td>
+					<td>PHY INT</td>
 				</tr>
 				<tr>
 					<td>RMII TX_EN</td>
