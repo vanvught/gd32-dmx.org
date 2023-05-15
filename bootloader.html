@@ -70,16 +70,26 @@
 				<td style="text-align: center">224K</td>
 			</tr>
 		</table>
-		<p>
-		The bootloader can be installed with the tools supplied by GigaDevice:</p>
+
+		<br>The bootloader is active during reset of the board:
 		<ul>
-			<li><a href="http://www.gd32mcu.com/en/download/7?kw=GD32F1" target="_blank" rel="noopener noreferrer">GD32F107</a></li>
-			<li><a href="http://www.gd32mcu.com/en/download/7?kw=GD32F2" target="_blank" rel="noopener noreferrer">GD32F207</a></li>
-			<li><a href="http://www.gd32mcu.com/en/download/7?kw=GD32F4" target="_blank" rel="noopener noreferrer">GD32F407</a></li>
-			<li><a href="http://www.gd32mcu.com/en/download/7?kw=GD32F4" target="_blank" rel="noopener noreferrer">GD32F450</a></li>
+			<li>Or when the KEY_BOOTLOADER_TFTP_GPIO_PINx is pressed.</li>
+			<li>Or when bkp_data_read(BKP_DATA_1) == 0xA5A5. This is set in
+				your application by means of human readable UDP messages.</li>
+		</ul>
+		The bootloader can be installed with the tools supplied by GigaDevice:
+		<ul>
+			<li><a href="http://www.gd32mcu.com/en/download/7?kw=GD32F1"
+				target="_blank" rel="noopener noreferrer">GD32F107</a></li>
+			<li><a href="http://www.gd32mcu.com/en/download/7?kw=GD32F2"
+				target="_blank" rel="noopener noreferrer">GD32F207</a></li>
+			<li><a href="http://www.gd32mcu.com/en/download/7?kw=GD32F4"
+				target="_blank" rel="noopener noreferrer">GD32F407</a></li>
+			<li><a href="http://www.gd32mcu.com/en/download/7?kw=GD32F4"
+				target="_blank" rel="noopener noreferrer">GD32F450</a></li>
 		</ul>
 
-<p>There is a sample Java UI available for installing the firmware: <a href="https://github.com/vanvught/GD32F-Firmware-Update-UI" target="_blank" rel="noopener noreferrer">GD32F-Firmware-Update-UI</a>
+		<p>There is a sample Java UI available for installing the firmware: <a href="https://github.com/vanvught/GD32F-Firmware-Update-UI" target="_blank" rel="noopener noreferrer">GD32F-Firmware-Update-UI</a>
 <br>
   <img src="https://raw.githubusercontent.com/vanvught/GD32F-Firmware-Update-UI/main/FirmwareUpdateUI.png" style="float: left" alt="GD32F Firmware Update UI TFTP Server">
 	</p></div>

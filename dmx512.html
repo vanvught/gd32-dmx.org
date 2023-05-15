@@ -35,8 +35,15 @@
 		<a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i></a>
 	</div>
 
+	Quick links:
+	<ul>
+		<li><a href="#section1">RDM Data direction GPIO's</a></li>
+		<li><a href="#section2">U(S)ART DMA Channel'sS</a></li>
+		<li><a href="#section3">Timers used</a></li>
+	</ul>
+
 	<div style="padding-left: 16px">
-		<h3>RDM Data direction GPIO's</h3>
+		<h3 id="section1">RDM Data direction GPIO's</h3>
 		Logic level '0' = INPUT, '1' = OUTPUT
 		<div style="overflow-x: auto;">
 			<table>
@@ -102,8 +109,24 @@
 			</tr>
 			</table>
 		</div>
+		
+		<p>The above is defined in the files:</p>
+		<ul>
+			<li>lib-dmx/include/gd32/board_gd32f103rc.h</li>
+			<li>lib-dmx/include/gd32/board_gd32f107rc.h</li>
+			<li>lib-dmx/include/gd32/board_gd32f207rg.h</li>
+			<li>lib-dmx/include/gd32/board_gd32f303rc.h</li>
+			<li>lib-dmx/include/gd32/board_gd32f407re.h</li>
+			<li>lib-dmx/include/gd32/board_gd32f450vi.h</li>
+			<li>lib-dmx/include/gd32/board_gd32f207c_eval.h</li>
+			<li>lib-dmx/include/gd32/board_bw_opidmx4.h</li>
+			<li>lib-dmx/include/gd32/board_dmx4.h</li>
+		</ul>
 	
-		<h3>U(S)ART DMA Channel's</h3>
+		(1) There is DMX output only.<br>
+		(2) User defined.
+		
+		<h3 id="section2">U(S)ART DMA Channel's</h3>
 		
 		<div style="overflow-x: auto;">
 		<table>
@@ -224,7 +247,7 @@
 			<li>lib-gd32/include/mcu/gd32f4xx_mcu.h</li>
 		</ul>
 
-		<h3>Timers used</h3>
+		<h3 id="section3">Timers used</h3>
 
 		<table>
 			<tr>
