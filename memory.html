@@ -26,6 +26,7 @@
 		<a href="dmx512.html">DMX512</a>
    		<a href="rdm.html">RDM</a>
 		<a href="pixel.html">Pixel</a>
+		<a href="ltc.html">LTC SMPTE</a>
    		<a href="ethernet.html">Ethernet</a>
    		<a href="memory.html" class="active">Memory</a>
 		<a href="github.html">GitHub</a>
@@ -43,7 +44,9 @@
 			<td>Size [KB]</td>
 			<td>Description</td>
 			<td>GD32F207RG</td>
+			<td>GD32F207VC</td>
 			<td>GD32F407RE</td>
+			<td>GD32F450VE</td>
 			<td>GD32F450VI</td>
 		</tr>
 		<tr>
@@ -51,6 +54,8 @@
 			<td>64</td>
 			<td>TCMSRAM</td>
 			<td>N.A.</td>
+			<td>N.A.</td>
+			<td>.stack<br>.network<br>.heap</td>
 			<td>.stack<br>.network<br>.heap</td>
 			<td>.stack<br>.network<br>.heap</td>
 		</tr>
@@ -58,6 +63,8 @@
 		<td>0x2000 0000 - 0x2001 BFFF</td>
 			<td>112</td>
 			<td>SRAM0</td>
+			<td>.data<br>.bss</td>
+			<td>.stack<br>.data<br>.bss<br>.heap</td>
 			<td>.data<br>.bss</td>
 			<td>.data<br>.bss</td>
 			<td>.data<br>.bss</td>
@@ -68,6 +75,8 @@
 			<td>SRAM1</td>
 			<td>.dmx<br>.pixel</td>
 			<td>.dmx<br>.pixel</td>
+			<td>.dmx<br>.pixel</td>
+			<td>.dmx</td>
 			<td>.dmx</td>
 		</tr>
 		<tr>
@@ -76,12 +85,16 @@
 			<td>SRAM2</td>
 			<td>.stack<br>.network<br>.heap</td>
 			<td>N.A.</td>
+			<td>N.A.</td>
+			<td></td>
 			<td>.pixel</td>
 		</tr>
 		<tr>
 			<td>0x2003 0000 - 0x2006 FFFF</td>
 			<td>256</td>
 			<td>ADDSRAM</td>
+			<td>N.A.</td>
+			<td>N.A.</td>
 			<td>N.A.</td>
 			<td>N.A.</td>
 			<td>.lightset</td>
