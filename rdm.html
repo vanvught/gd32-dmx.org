@@ -18,6 +18,16 @@
 <script async src="https://kit.fontawesome.com/37a6441831.js" crossorigin="anonymous" type="text/javascript"></script>
 </head>
 
+<style>
+	td:nth-child(2) {
+		text-align: center;
+	}
+
+	td:nth-child(3) {
+		text-align: center;
+	}
+</style>
+
 <body>
 	<div class="topnav" id="myTopnav">
 		<a href="index.html" class="active">Home</a>
@@ -36,6 +46,7 @@
 	</div>
 	<div style="padding-left: 16px">
 		<h3>Supported PIDs</h3>
+		
 		<div style="overflow-x: auto;">
 			<table>
 					<tr>
@@ -226,6 +237,43 @@
 					</tr>
 			</table>
 		</div>
+		
+		<h4>Manufacturer PIDs</h4>
+		<div style="overflow-x: auto;">
+			<table>
+				<tr>
+					<th>PID</th>
+					<th>GET</th>
+					<th>SET</th>
+					<th>Implementation note</th>
+				</tr>
+				<tr>
+					<td>0x8500</td>
+					<td>√</td>
+					<td></td>
+					<td>Pixel type</td>
+				</tr>
+				<tr>
+					<td>0x8501</td>
+					<td>√</td>
+					<td></td>
+					<td>Pixel count</td>
+				</tr>
+				<tr>
+					<td>0x8502</td>
+					<td>√</td>
+					<td></td>
+					<td>Pixel grouping count</td>
+				</tr>
+				<tr>
+					<td>0x8503</td>
+					<td>√</td>
+					<td></td>
+					<td>Pixel map</td>
+				</tr>
+			</table>
+		</div>
+					
 		<br> <b>RDMNet LLRP Only</b>
 		<div style="overflow-x: auto;">
 			<table>

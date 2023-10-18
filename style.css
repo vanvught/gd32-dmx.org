@@ -7,8 +7,7 @@ body {
 	/* currently ems cause chrome bug misinterpreting rems on body element */
 	line-height: 1.6;
 	font-weight: 400;
-	font-family: "Roboto", "HelveticaNeue", "Helvetica Neue", Helvetica,
-		Arial, sans-serif;
+	font-family: "Roboto", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 code {
@@ -28,22 +27,22 @@ a:focus {
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  border: 1px solid #ddd;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 1px solid #ddd;
 }
+
 th {
-  text-align: left;
-  padding: 2px;
-  background-color: lightgray;
+	text-align: left;
+	padding: 2px;
+	background-color: lightgray;
 }
 
 td {
 	border: 1px solid;
-  text-align: left;
-  padding: 2px;
+	text-align: left;
+	padding: 2px;
 }
-
 tr:nth-child(even){background-color: #f2f2f2}
 
 .text-center-row>th, .text-center-row>td {
