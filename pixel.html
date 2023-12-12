@@ -83,7 +83,7 @@
 				<td><img src="images/pixel-dma.png" style="width: auto; height: 80%;" alt="Timer DMA GPIO WS2812B"></td>
 			</tr>
 		</table>
-		
+
 		<h3>Timers used</h3>
 
 		<table>
@@ -96,6 +96,71 @@
 				<td>Slave -> ITI2</td>
 			</tr>
 		</table>
+		
+		<h3>DMA channels used</h3>
+		
+		<div style="overflow-x: auto;">
+			<table>
+				<tr>
+					<td>MCU Family</td>
+					<td></td>
+					<td>Channnel 0</td>
+					<td>Channnel 1</td>
+					<td>Channnel 2</td>
+					<td>Channnel 3</td>
+					<td>Channnel 4</td>
+					<td>Channnel 5</td>
+					<td>Channnel 6</td>
+					<td>Channnel 7</td>
+				</tr>
+				<tr>
+					<td rowspan="2">GD32F20x</td>
+					<td>DMA 0</td>
+					<td></td>
+					<td class="spi">TIMER2_CH2</td>
+					<td class="spi">TIMER2_CH3</td>
+					<td></td>
+					<td></td>
+					<td class="spi">TIMER2_CH0</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>DMA 1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td rowspan="2">GD32F4xx</td>
+					<td>DMA 0</td>
+					<td></td>
+					<td></td>
+					<td class="spi">TIMER2_CH3</td>
+					<td></td>
+					<td class="spi">TIMER2_CH0</td>
+					<td></td>
+					<td></td>
+					<td class="spi">TIMER2_CH2</td>
+				</tr>
+				<tr>
+					<td>DMA 1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
 
 		<h2 id="section2">SPI/I2S</h2>
 
