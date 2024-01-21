@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>GD32Fxxx DMX512 RDM Pixel</title>
-<meta name="description" content="GigaDevice MCU GD32F Art-Net sACN DMX512 RDM DP83848 LAN8700 RTL8201F Ethernet IP UDP TCP">
+<meta name="description" content="GigaDevice MCU GD32F Art-Net sACN DMX512 RDM DP83848 LAN8700 RTL8201F Ethernet IP UDP NTP TFTP MDNS TCP HTTP">
 <meta name="author" content="Arjan van Vught">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -53,8 +53,10 @@
 		</ul>
 		Applications:
 		<ul>
-			<li>MDNS (Multicast DNS) responder</li>
+			<li>NTP client</li>
+			<li>TFTP server</li>
 			<li>HTTP server</li>
+			<li>MDNS (Multicast DNS) responder</li>
 		</ul>
 		Example building the firmware for RTL8201F:
 		<br><code>make -f Makefile.GD32 clean && make -f Makefile.GD32 ENET_PHY=RTL8201F</code>
