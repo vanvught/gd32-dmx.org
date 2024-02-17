@@ -136,3 +136,13 @@ tr:nth-child(even){background-color: #f2f2f2}
 		text-align: left;
 	}
 }
+
+#wrapper {
+    overflow: hidden;
+}
+
+#first, #second {
+    float: left;
+    padding: 4px;
+    box-sizing: border-box;
+}

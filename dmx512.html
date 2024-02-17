@@ -39,8 +39,9 @@
 	Quick links:
 	<ul>
 		<li><a href="#section1">RDM Data direction GPIO's</a></li>
-		<li><a href="#section2">U(S)ART DMA Channel'sS</a></li>
-		<li><a href="#section3">Timers used</a></li>
+		<li><a href="#section2">U(S)ART DMA Channel's</a></li>
+		<li><a href="#section3">U(S)ART GPIO AF</a></li>
+		<li><a href="#section4">Timers used</a></li>
 	</ul>
 
 	<div style="padding-left: 16px">
@@ -239,7 +240,172 @@
 			</tr>
 		</table>
 		</div>
-		
+
+		<h3 id="section3">GPIO REMAP [AF7]</h3>
+
+		<div id="wrapper">
+			<div id="first">
+				<table>
+					<tr>
+						<th>USART0</th>
+						<th>REMAP=0</th>
+						<th>REMAP=1</th>
+					</tr>
+					<tr>
+						<td>TX</td>
+						<td>PA9</td>
+						<td>PB6</td>
+					</tr>
+					<tr>
+						<td>RX</td>
+						<td>PA10</td>
+						<td>PB7</td>
+					</tr>
+				</table>
+			</div>
+			<div id="second">
+				<table>
+					<tr>
+						<th>USART1</th>
+						<th>REMAP=0</th>
+						<th>REMAP=1</th>
+					</tr>
+					<tr>
+						<td>TX</td>
+						<td>PA2</td>
+						<td>PD5</td>
+					</tr>
+					<tr>
+						<td>RX</td>
+						<td>PA3</td>
+						<td>PD6</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div id="wrapper">
+			<div id="first">
+				<table>
+					<tr>
+						<th>USART2</th>
+						<th>REMAP=00</th>
+						<th>REMAP=01</th>
+						<th>REMAP=11</th>
+					</tr>
+					<tr>
+						<td>TX</td>
+						<td>PB10</td>
+						<td>PC10</td>
+						<td>PD8</td>
+					</tr>
+					<tr>
+						<td>RX</td>
+						<td>PB11</td>
+						<td>PC11</td>
+						<td>PD9</td>
+					</tr>
+				</table>
+			</div>
+			<div id="second">
+				<table>
+					<tr>
+						<th>UART3</th>
+						<th>REMAP=0</th>
+						<th>REMAP=1</th>
+					</tr>
+					<tr>
+						<td>TX</td>
+						<td>PC10</td>
+						<td>PA0</td>
+					</tr>
+					<tr>
+						<td>RX</td>
+						<td>PC11</td>
+						<td>PA1</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		REMAP=00 (no remap), REMAP=01 (partial remap), REMAP=11 (full remap)
+
+		<div id="wrapper">
+			<div id="first">
+				<table>
+					<tr>
+						<th>UART4</th>
+						<th>REMAP=0</th>
+					</tr>
+					<tr>
+						<td>TX</td>
+						<td>PC12</td>
+					</tr>
+					<tr>
+						<td>RX</td>
+						<td>PD2</td>
+					</tr>
+				</table>
+			</div>
+			<div id="second">
+				<table>
+					<tr>
+						<th>USART5</th>
+						<th>REMAP=0</th>
+						<th>REMAP=1</th>
+					</tr>
+					<tr>
+						<td>TX</td>
+						<td>PC6</td>
+						<td>PG14</td>
+					</tr>
+					<tr>
+						<td>RX</td>
+						<td>PC7</td>
+						<td>PG9</td>
+					</tr>
+				</table>
+			</div>
+
+		</div>
+
+		<div id="wrapper">
+			<div id="first">
+				<table>
+					<tr>
+						<th>UART6</th>
+						<th>REMAP=0</th>
+						<th>REMAP=1</th>
+					</tr>
+					<tr>
+						<td>TX</td>
+						<td>PE8</td>
+						<td>PF7</td>
+					</tr>
+					<tr>
+						<td>RX</td>
+						<td>PE9</td>
+						<td>PF6</td>
+					</tr>
+				</table>
+			</div>
+			<div id="second">
+				<table>
+					<tr>
+						<th>UART7</th>
+						<th>NO REMAP</th>
+					</tr>
+					<tr>
+						<td>TX</td>
+						<td>PE1</td>
+					</tr>
+					<tr>
+						<td>RX</td>
+						<td>PE0</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
 		<p>The above is defined in the files:</p>
 		<ul>
 			<li>lib-gd32/include/mcu/gd32f10x_mcu.h</li>
@@ -247,8 +413,9 @@
 			<li>lib-gd32/include/mcu/gd32f30x_mcu.h</li>
 			<li>lib-gd32/include/mcu/gd32f4xx_mcu.h</li>
 		</ul>
+		
 
-		<h3 id="section3">Timers used</h3>
+		<h3 id="section4">Timers used</h3>
 
 		<table>
 			<tr>
