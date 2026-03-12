@@ -1,5 +1,6 @@
 html {
 	font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -149,4 +150,24 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 .remap {
 		font-size: 60%;
+}
+
+pre {
+    background: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 2px 6px;
+    overflow-x: auto;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+code {
+    font-family: inherit;
+    background: none;
+}
+
+pre code {
+    white-space: pre;
 }
