@@ -1,12 +1,13 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>GD32Fxxx DMX512 RDM Pixel</title>
-<meta name="description" content="GigaDevice MCU GD32F DMX512 RDM RDMNet LLRP GD32F103R GD32F107R GD32F207R GD32F303R GD32F207V GD32F407R GD32F450V GD32F470V GD32F470Z">
+<title>GD32 Memory Map</title>
+<meta name="description" content="GigaDevice MCU GD32F GD32H7 memory map for firmware and bootloader layouts, including SRAM, TCMSRAM, DTCMRAM, ITCMRAM and device-specific allocation overview.">
 <meta name="author" content="Arjan van Vught">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="page-modern.css" type="text/css" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-018KBY2JV9" type="text/javascript"></script>
 <script type="text/javascript">
@@ -20,146 +21,253 @@
 <script async src="https://kit.fontawesome.com/37a6441831.js" crossorigin="anonymous" type="text/javascript"></script>
 </head>
 
-<body>
+<body class="modern-page">
 	<div class="topnav" id="myTopnav">
 		<a href="index.html">Home</a>
 		<a href="dev-board.html">Dev-board</a>
-		<a href="bootloader.html">Bootloader TFTP</a> 
+		<a href="bootloader.html">Bootloader TFTP</a>
 		<a href="dmx512.html">DMX512</a>
-		<a href="rdm.html">RDM</a> <a href="pixel.html">Pixel</a>
-		<a href="ltc.html">LTC SMPTE</a> <a href="ethernet.html">Ethernet</a> 
-		<a href="memory.html" class="active">Memory</a> 
+		<a href="rdm.html">RDM</a>
+		<a href="pixel.html">Pixel</a>
+		<a href="ltc.html">LTC SMPTE</a>
+		<a href="ethernet.html">Ethernet</a>
+		<a href="memory.html" class="active">Memory</a>
 		<a href="github.html">GitHub</a>
-		<a href="contact.html">Contact</a> 
-		<a href="https://paypal.me/AvanVught?locale.x=nl_NL">PayPal.Me Donate</a> 
-		<a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i></a>
+		<a href="contact.html">Contact</a>
+		<a href="https://paypal.me/AvanVught?locale.x=nl_NL">PayPal.Me Donate</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
 	</div>
-	<h1>Memory map</h1>
-	<div style="padding-left: 16px">
-		<h2>Firmware</h2>
-		<h3>RAM GD32Fxxx</h3>
-		<table>
-			<thead>
-				<tr>
-					<th>Address</th>
-					<th>Size [KB]</th>
-					<th>Description</th>
-					<th>GD32F207RG</th>
-					<th>GD32F207VC</th>
-					<th>GD32F407RE</th>
-					<th>GD32F450VE</th>
-					<th>GD32F450VI</th>
-					<th>GD32F470VG</th>
-					<th>GD32F470ZK</th>
-				</tr>
-			</thead>
-			<tr>
-				<td>0x1000 0000 - 0x1000 FFFF</td>
-				<td>64</td>
-				<td>TCMSRAM</td>
-				<td>N.A.</td>
-				<td>N.A.</td>
-				<td>.stack<br>.network<br>.heap</td>
-				<td>.stack<br>.network<br>.heap</td>
-				<td>.stack<br>.network<br>.heap</td>
-				<td>.stack<br>.network<br>.heap</td>
-				<td>.stack<br>.network<br>.heap</td>
-			</tr>
-			<tr>
-				<td>0x2000 0000 - 0x2001 BFFF</td>
-				<td>112</td>
-				<td>SRAM0</td>
-				<td>.data<br>.bss</td>
-				<td>.stack<br>.data<br>.bss<br>.heap</td>
-				<td>.data<br>.bss</td>
-				<td>.data<br>.bss</td>
-				<td>.lightset</td>
-				<td>.lightset</td>
-				<td>.data<br>.bss</td>
-			</tr>
-			<tr>
-				<td>0x2001 C000 - 0x2001 FFFF</td>
-				<td>16</td>
-				<td>SRAM1</td>
-				<td>.stack<br>.heap
-				</td>
-				<td>.dmx</td>
-				<td>.dmx</td>
-				<td>.dmx</td>
-				<td>.dmx</td>
-				<td></td>
-				<td>.dmx</td>
-			</tr>
-			<tr>
-				<td>0x2002 0000 - 0x2002 FFFF</td>
-				<td>128[207]<br>64[450/470]
-				</td>
-				<td>SRAM2</td>
-				<td>.dmx<br>.pixel<br>.network
-				</td>
-				<td>N.A.</td>
-				<td>N.A.</td>
-				<td></td>
-				<td>.pixel</td>
-				<td>.pixel</td>
-				<td>.pixel</td>
-			</tr>
-			<tr>
-				<td>0x2003 0000 - 0x2006 FFFF</td>
-				<td>256</td>
-				<td>ADDSRAM</td>
-				<td>N.A.</td>
-				<td>N.A.</td>
-				<td>N.A.</td>
-				<td>N.A.</td>
-				<td>.data<br>.bss</td>
-				<td>.data<br>.bss</td>
-				<td>N.A.</td>
-			</tr>
-		</table>
-		<h3>RAM GD32H75x</h3>
-		<table>
-			<thead>
-				<tr>
-					<th>Address</th>
-					<th>Size [KB]</th>
-					<th>Description</th>
-					<th>GD32H759IM</th>
-				</tr>
-			</thead>
-			<tr>
-				<td>0x0000 0000 - 0x0000 FFFF</td>
-				<td>64</td>
-				<td>ITCMRAM</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>0x2000 0000 - 0x2001 FFFF</td>
-				<td>128</td>
-				<td>DTCMRAM</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>0x2400 0000 - 0x2404 FFFF</td>
-				<td>320</td>
-				<td>RAM</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>0x3000 0000 - 0x3000 3FFF</td>
-				<td>16</td>
-				<td>RAM1</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>0x3000 4000 - 0x3000 7FFF</td>
-				<td>16</td>
-				<td>RAM2</td>
-				<td></td>
-			</tr>
-		</table>
-		<h2>Bootloader</h2>
-	</div>
+
+	<main class="page-shell">
+		<section class="hero-panel">
+			<div class="hero-content">
+				<span class="eyebrow">Memory layout overview</span>
+				<h1 class="hero-title">GD32 Firmware Memory Map</h1>
+				<p class="hero-lead">
+					An overview of the memory layout used by the firmware across supported
+					<strong class="hero-highlight">GD32Fxxx</strong> and <strong class="hero-highlight">GD32H75x</strong>
+					targets. This page summarizes how RAM regions are assigned for stack, heap,
+					networking, DMX, pixel processing, and general data sections.
+				</p>
+
+				<ul class="hero-badges">
+					<li>Firmware RAM</li>
+					<li>GD32F2 / F4 / F47x</li>
+					<li>GD32H75x</li>
+					<li>Section placement</li>
+					<li>Bootloader ready</li>
+				</ul>
+
+				<div class="hero-actions">
+					<a href="#firmware-map" class="hero-button hero-button-primary">Firmware memory map</a>
+					<a href="#gd32h75x-map" class="hero-button hero-button-secondary">GD32H75x RAM</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="content-grid">
+			<article class="page-card">
+				<h2 class="card-title">What this page shows</h2>
+				<ul class="feature-list">
+					<li><strong>Device-specific RAM regions</strong> for supported MCUs</li>
+					<li><strong>Section placement</strong> such as <code>.stack</code>, <code>.heap</code>, <code>.data</code>, <code>.bss</code>, <code>.dmx</code>, <code>.pixel</code>, and <code>.network</code></li>
+					<li><strong>Differences between families</strong> including GD32F2xx, GD32F4xx, GD32F47x, and GD32H75x</li>
+				</ul>
+			</article>
+
+			<article class="page-card">
+				<h2 class="card-title">Why it matters</h2>
+				<p>
+					On embedded targets, memory placement directly affects performance,
+					determinism, and feature capacity. Separating network, DMX, pixel, and core runtime
+					data into appropriate memory regions makes the firmware easier to scale and tune
+					across multiple MCU variants.
+				</p>
+			</article>
+		</section>
+
+		<section id="firmware-map" class="section-panel">
+			<span class="section-kicker">Firmware layout</span>
+			<h2 class="section-title">RAM GD32Fxxx</h2>
+
+			<div class="highlight-box">
+				<h3>Overview</h3>
+				<p>
+					The table below summarizes the RAM regions used by the firmware on supported
+					GD32Fxxx devices. Memory allocation varies by device because the available RAM
+					blocks and their intended usage differ between families.
+				</p>
+			</div>
+
+			<div class="table-wrap">
+				<table class="modern-table">
+					<thead>
+						<tr>
+							<th>Address</th>
+							<th>Size [KB]</th>
+							<th>Description</th>
+							<th>GD32F207RG</th>
+							<th>GD32F207VC</th>
+							<th>GD32F407RE</th>
+							<th>GD32F450VE</th>
+							<th>GD32F450VI</th>
+							<th>GD32F470VG</th>
+							<th>GD32F470ZK</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>0x1000 0000 - 0x1000 FFFF</td>
+							<td>64</td>
+							<td class="active-cell">TCMSRAM</td>
+							<td>N.A.</td>
+							<td>N.A.</td>
+							<td>.stack<br>.network<br>.heap</td>
+							<td>.stack<br>.network<br>.heap</td>
+							<td>.stack<br>.network<br>.heap</td>
+							<td>.stack<br>.network<br>.heap</td>
+							<td>.stack<br>.network<br>.heap</td>
+						</tr>
+						<tr>
+							<td>0x2000 0000 - 0x2001 BFFF</td>
+							<td>112</td>
+							<td class="active-cell">SRAM0</td>
+							<td>.data<br>.bss</td>
+							<td>.stack<br>.data<br>.bss<br>.heap</td>
+							<td>.data<br>.bss</td>
+							<td>.data<br>.bss</td>
+							<td>.lightset</td>
+							<td>.lightset</td>
+							<td>.data<br>.bss</td>
+						</tr>
+						<tr>
+							<td>0x2001 C000 - 0x2001 FFFF</td>
+							<td>16</td>
+							<td class="active-cell">SRAM1</td>
+							<td>.stack<br>.heap</td>
+							<td>.dmx</td>
+							<td>.dmx</td>
+							<td>.dmx</td>
+							<td>.dmx</td>
+							<td></td>
+							<td>.dmx</td>
+						</tr>
+						<tr>
+							<td>0x2002 0000 - 0x2002 FFFF</td>
+							<td>128 [207]<br>64 [450/470]</td>
+							<td class="active-cell">SRAM2</td>
+							<td>.dmx<br>.pixel<br>.network</td>
+							<td>N.A.</td>
+							<td>N.A.</td>
+							<td></td>
+							<td>.pixel</td>
+							<td>.pixel</td>
+							<td>.pixel</td>
+						</tr>
+						<tr>
+							<td>0x2003 0000 - 0x2006 FFFF</td>
+							<td>256</td>
+							<td class="active-cell">ADDSRAM</td>
+							<td>N.A.</td>
+							<td>N.A.</td>
+							<td>N.A.</td>
+							<td>N.A.</td>
+							<td>.data<br>.bss</td>
+							<td>.data<br>.bss</td>
+							<td>N.A.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="info-note">
+				Section names shown in the table reflect the intended placement of runtime areas such as
+				<strong>.stack</strong>, <strong>.heap</strong>, <strong>.network</strong>,
+				<strong>.dmx</strong>, <strong>.pixel</strong>, <strong>.lightset</strong>,
+				<strong>.data</strong>, and <strong>.bss</strong>.
+			</div>
+		</section>
+
+		<section id="gd32h75x-map" class="section-panel">
+			<span class="section-kicker">High-performance family</span>
+			<h2 class="section-title">RAM GD32H75x</h2>
+
+			<div class="section-grid">
+				<div class="info-panel">
+					<h3>Architecture notes</h3>
+					<p>
+						The GD32H75x family provides multiple RAM regions, including tightly-coupled
+						instruction and data memories as well as general-purpose RAM blocks.
+						This allows workloads to be distributed according to latency and bandwidth needs.
+					</p>
+				</div>
+
+				<div class="info-panel">
+					<h3>Target listed</h3>
+					<ul class="feature-list">
+						<li><strong>GD32H759IM</strong></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="table-wrap">
+				<table class="modern-table">
+					<thead>
+						<tr>
+							<th>Address</th>
+							<th>Size [KB]</th>
+							<th>Description</th>
+							<th>GD32H759IM</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>0x0000 0000 - 0x0000 FFFF</td>
+							<td>64</td>
+							<td class="active-cell">ITCMRAM</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>0x2000 0000 - 0x2001 FFFF</td>
+							<td>128</td>
+							<td class="active-cell">DTCMRAM</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>0x2400 0000 - 0x2404 FFFF</td>
+							<td>320</td>
+							<td class="active-cell">RAM</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>0x3000 0000 - 0x3000 3FFF</td>
+							<td>16</td>
+							<td class="active-cell">RAM1</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>0x3000 4000 - 0x3000 7FFF</td>
+							<td>16</td>
+							<td class="active-cell">RAM2</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section class="section-panel">
+			<span class="section-kicker">Bootloader</span>
+			<h2 class="section-title">Bootloader</h2>
+			<div class="info-panel">
+				<p>
+					This section is reserved for documenting the bootloader memory map and region usage.
+					It can be expanded later using the same layout style as the firmware tables above.
+				</p>
+			</div>
+		</section>
+	</main>
+
 	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

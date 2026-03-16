@@ -1,310 +1,434 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>GD32Fxxx DMX512 RDM Pixel</title>
+<title>GD32 Pixel</title>
 <meta name="description" content="GigaDevice MCU GD32F GD32F450V GD32F470V Art-Net sACN Pixel WS2812B SK6812 UCS1903 CS8812 APA102 SK9822">
 <meta name="author" content="Arjan van Vught">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="style.css" type="text/css" />
-<!-- Global site tag (gtag.js) - Google Analytics -->
+<link rel="stylesheet" href="page-modern.css" type="text/css" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-018KBY2JV9" type="text/javascript"></script>
 <script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-018KBY2JV9');
 </script>
 <script async src="https://kit.fontawesome.com/37a6441831.js" crossorigin="anonymous" type="text/javascript"></script>
 </head>
 
-<body>
-	<div class="topnav" id="myTopnav">
-		<a href="index.html">Home</a>
-		<a href="dev-board.html">Dev-board</a>
-		<a href="bootloader.html">Bootloader TFTP</a>
-		<a href="dmx512.html">DMX512</a>
-   		<a href="rdm.html">RDM</a>
-		<a href="pixel.html" class="active">Pixel</a>
-		<a href="ltc.html">LTC SMPTE</a>
-   		<a href="ethernet.html">Ethernet</a>
-   		<a href="memory.html">Memory</a>
-		<a href="github.html">GitHub</a>
-		<a href="contact.html">Contact</a>
-		<a href="https://paypal.me/AvanVught?locale.x=nl_NL">PayPal.Me Donate</a>
-		<a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i></a>
-	</div>
+<body class="modern-page">
+  <div class="topnav" id="myTopnav">
+    <a href="index.html">Home</a>
+    <a href="dev-board.html">Dev-board</a>
+    <a href="bootloader.html">Bootloader TFTP</a>
+    <a href="dmx512.html">DMX512</a>
+    <a href="rdm.html">RDM</a>
+    <a href="pixel.html" class="active">Pixel</a>
+    <a href="ltc.html">LTC SMPTE</a>
+    <a href="ethernet.html">Ethernet</a>
+    <a href="memory.html">Memory</a>
+    <a href="github.html">GitHub</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://paypal.me/AvanVught?locale.x=nl_NL">PayPal.Me Donate</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i></a>
+  </div>
 
-	<div style="padding-left: 16px">
-		Key features:
-		<ul>
-			<li>No FPS limit except for what is with the pixel chip protocol.</li>
-			<li>Full Art-Net 4 implementation including ArtTrigger for running test patterns.</li>
-			<li>Full sACN E1.31 implementation.</li>
-			<li>Discovery and network configuration with RDMNet LLRP Only.</li>
-			<li>Central remote configuration based on UDP readable messages.</li>
-			<li>Configuration management with HTTP/JSON. This includes discovery as well.</li>
-			<li>Enable TFTP server for uploading new firmware.</li>
-		</ul>
+  <main class="page-shell">
+    <section class="hero-panel">
+      <div class="hero-content">
+        <span class="eyebrow">GD32 Pixel Output Engine</span>
+        <h1 class="hero-title">Modern, high-performance pixel control for Cortex-ARM</h1>
+        <p class="hero-lead">
+          A highly optimized Art-Net and sACN pixel controller for GD32 Cortex-ARM microcontrollers,
+          built around a <span class="hero-highlight">Timer → DMA → GPIO</span> architecture for
+          deterministic timing, minimal CPU overhead, and maximum output efficiency.
+          This design uses the hardware exactly where Cortex-ARM performs best:
+          timers for precise scheduling, DMA for data movement, and GPIO for direct waveform generation.
+        </p>
 
-		Support for:
-		<ul>
-			<li>All RTZ protocol pixel’s. There are some predefined chip’s, for example WS2812B.
-			When other timing is needed, then it can be set with any low-code and high-code.</li>
-			<li>Clock based protocol pixel’s: APA102, SK9822 and P9813.</li>
-		</ul>
-		
-		Quick links:
-		<ul>
-			<li><a href="#section1">Timer->DMA->GPIO</a></li>
-			<li><a href="#section2">SPI/I2S</a></li>
-			<li><a href="#section3">Development board 16x 4U, 2x DMX Out</a></li>
-		</ul>
+        <ul class="hero-badges">
+          <li>Art-Net 4</li>
+          <li>sACN E1.31</li>
+          <li>RDMNet LLRP</li>
+          <li>HTTP / JSON</li>
+          <li>TFTP Update</li>
+          <li>Low CPU Overhead</li>
+        </ul>
 
-		<h2 id="section1">Timer->DMA->GPIO</h2>
+        <div class="hero-actions">
+          <a href="#section1" class="hero-button hero-button-primary">Explore Timer → DMA → GPIO</a>
+          <a href="#section2" class="hero-button hero-button-secondary">See SPI / I2S</a>
+          <a href="#section3" class="hero-button hero-button-secondary">View 16-port hardware</a>
+        </div>
+      </div>
+    </section>
 
-		There are 2 timer’s used in a master-slave mode. The master is
-		generating the DMA requests and the slave is the pixel buffer counter.
-		There is just one interrupt. This makes it the most efficient
-		implementation possible. For the RTZ protocol there are 3 DMA
-		requests:
+    <section class="pixel-grid">
+      <article class="pixel-card">
+        <h2 class="card-title">Key features</h2>
+        <ul class="feature-list">
+          <li><strong>No artificial FPS limit</strong> beyond what is imposed by the selected pixel chip protocol.</li>
+          <li><strong>Full Art-Net 4 implementation</strong>, including ArtTrigger for running test patterns.</li>
+          <li><strong>Full sACN E1.31 implementation</strong>.</li>
+          <li><strong>Discovery and network configuration</strong> using RDMNet LLRP only.</li>
+          <li><strong>Central remote configuration</strong> based on UDP-readable messages.</li>
+          <li><strong>Configuration management with HTTP/JSON</strong>, including discovery support.</li>
+          <li><strong>TFTP server support</strong> for uploading new firmware.</li>
+        </ul>
+      </article>
 
-		<table>
-			<tr>
-				<td>
-					<ol>
-						<li>Always the HIGH output.</li>
-						<li>The LOW when there must be a 0 code.</li>
-						<li>Always the LOW output after T1H.</li>
-					</ol>
-				</td>
-				<td><img src="images/pixel-dma.png" style="width: auto; height: 80%;" alt="Timer DMA GPIO WS2812B"></td>
-			</tr>
-		</table>
+      <article class="pixel-card">
+        <h2 class="card-title">Supported protocols</h2>
+        <ul class="support-list">
+          <li>
+            <strong>RTZ protocol pixels</strong>, including predefined chip types such as WS2812B.
+            When different timing is needed, it can be configured using custom low-code and high-code values.
+          </li>
+          <li>
+            <strong>Clock-based protocol pixels</strong>: APA102, SK9822 and P9813.
+          </li>
+        </ul>
 
-		<h3>Timers used</h3>
+        <div class="info-note">
+          The implementation is designed to exploit the strengths of Cortex-ARM microcontrollers:
+          precise hardware timing, DMA-driven transfers, and minimal interrupt load.
+        </div>
+      </article>
+    </section>
 
-		<table>
-			<tr>
-				<td>2</td>
-				<td>Master -> TIMER2_TRGO</td>
-			</tr>
-			<tr>
-				<td>3</td>
-				<td>Slave -> ITI2</td>
-			</tr>
-		</table>
-		
-		<h3>DMA channels used</h3>
-		
-		<div style="overflow-x: auto;">
-			<table>
-				<tr>
-					<td>MCU Family</td>
-					<td></td>
-					<td>Channnel 0</td>
-					<td>Channnel 1</td>
-					<td>Channnel 2</td>
-					<td>Channnel 3</td>
-					<td>Channnel 4</td>
-					<td>Channnel 5</td>
-					<td>Channnel 6</td>
-					<td>Channnel 7</td>
-				</tr>
-				<tr>
-					<td rowspan="2">GD32F20x</td>
-					<td>DMA 0</td>
-					<td></td>
-					<td class="spi">TIMER2_CH2</td>
-					<td class="spi">TIMER2_CH3</td>
-					<td></td>
-					<td></td>
-					<td class="spi">TIMER2_CH0</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>DMA 1</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td rowspan="2">GD32F4xx</td>
-					<td>DMA 0</td>
-					<td></td>
-					<td></td>
-					<td class="spi">TIMER2_CH3</td>
-					<td></td>
-					<td class="spi">TIMER2_CH0</td>
-					<td></td>
-					<td></td>
-					<td class="spi">TIMER2_CH2</td>
-				</tr>
-				<tr>
-					<td>DMA 1</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-			</table>
-		</div>
+    <section class="quick-links-panel">
+      <h2>Quick links</h2>
+      <div class="quick-links-list">
+        <a href="#section1"><i class="fa fa-bolt"></i> Timer → DMA → GPIO</a>
+        <a href="#section2"><i class="fa fa-microchip"></i> SPI / I2S</a>
+        <a href="#section3"><i class="fa fa-server"></i> Development board 16x 4U, 2x DMX Out</a>
+      </div>
+    </section>
 
-		<h2 id="section2">SPI/I2S</h2>
+    <section id="section1" class="section-panel">
+      <span class="section-kicker">Core architecture</span>
+      <h2 class="section-title">Timer → DMA → GPIO</h2>
+      <p>
+        The output engine uses <strong>two timers in master-slave mode</strong>.
+        The master generates the DMA requests and the slave acts as the pixel buffer counter.
+        There is <strong>just one interrupt</strong> for the transfer lifecycle.
+        This makes the design exceptionally efficient for Cortex-ARM, because the waveform generation is handled by hardware rather than software polling or tight interrupt loops.
+      </p>
 
-		As the SPI speed cannot be specified exaclty, the I2S peripheral is used instead.
-		<b>SPI speed</b> = <b>I2S bitrate</b> = Audio sample rate * number of
-		bits per channel * number of channels. Therefore, the Audio sample
-		rate = SPI speed / 16 / 2. For the WS2812B type protocol, the SPI
-		speed must be (close to) 6.4Mhz.
+      <div class="highlight-box">
+        <h3>Why this architecture is so effective on Cortex-ARM</h3>
+        <ul class="feature-list">
+          <li><strong>Precise timing</strong> is generated by the timer hardware.</li>
+          <li><strong>DMA writes directly</strong> to the GPIO set/reset registers.</li>
+          <li><strong>CPU overhead stays low</strong> during pixel output.</li>
+          <li><strong>Interrupt pressure is minimized</strong> to a single interrupt for the transfer process.</li>
+          <li><strong>Scaling across multiple outputs</strong> becomes practical without compromising timing integrity.</li>
+        </ul>
+      </div>
 
-		<h3>Clock tree</h3>
+      <div class="media-grid">
+        <div class="text-panel">
+          <h3>RTZ protocol DMA requests</h3>
+          <p>For RTZ protocol pixels there are three DMA requests:</p>
+          <ol class="ordered-list">
+            <li><strong>Always the HIGH output</strong>.</li>
+            <li><strong>The LOW output for a 0 code</strong>.</li>
+            <li><strong>Always the LOW output after T1H</strong>.</li>
+          </ol>
+        </div>
 
-		<table>
-			<tr>
-				<th>MCU</th>
-				<th>CK_SYS</th>
-				<th>CK_I2S</th>
-			</tr>
-			<tr class="text-center-row">
-				<td>GD32F103RC</td>
-				<td>108MHz</td>
-				<td>108MHz</td>
-			</tr>
-			<tr class="text-center-row">
-				<td>GD32F303RC</td>
-				<td>120MHz</td>
-				<td>120MHz</td>
-			</tr>
-		</table>
+        <div class="image-panel">
+          <img src="images/pixel-dma.png" alt="Timer DMA GPIO waveform generation for WS2812B">
+        </div>
+      </div>
 
-		<table>
-			<tr>
-				<th>MCU</th>
-				<th>CK_SYS</th>
-				<th>HXTAL</th>
-				<th>PREDV1</th>
-				<th>PLL2MF</th>
-				<th>CK_PLL2</th>
-				<th>x2</th>
-				<th>CK_I2S</th>
-			</tr>
+      <div class="two-col-grid">
+        <div class="info-panel">
+          <h3>Timers used</h3>
+          <div class="table-wrap">
+            <table class="modern-table">
+              <thead>
+                <tr>
+                  <th>Timer</th>
+                  <th>Function</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2</td>
+                  <td>Master → TIMER2_TRGO</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Slave → ITI2</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-			<tr class="text-center-row">
-				<td>GD32F107RC</td>
-				<td>-</td>
-				<td>25MHz</td>
-				<td>/5</td>
-				<td>x16</td>
-				<td>80Mhz</td>
-				<td>√</td>
-				<td>160Mhz</td>
-			</tr>
+        <div class="info-panel">
+          <h3>Implementation summary</h3>
+          <p>
+            This is the kind of design that suits Cortex-ARM extremely well:
+            the application prepares the buffer once, then the timer and DMA peripherals take over the real-time work.
+            The result is stable output timing, low jitter, and excellent performance without wasting CPU cycles.
+          </p>
+        </div>
+      </div>
 
-			<tr class="text-center-row">
-				<td>GD32F207RG</td>
-				<td>-</td>
-				<td>25MHz</td>
-				<td>/5</td>
-				<td>x16</td>
-				<td>80Mhz</td>
-				<td>√</td>
-				<td>160Mhz</td>
-			</tr>
+      <h3>DMA channels used</h3>
+      <div class="table-wrap">
+        <table class="modern-table">
+          <thead>
+            <tr>
+              <th>MCU Family</th>
+              <th>DMA</th>
+              <th>Channel 0</th>
+              <th>Channel 1</th>
+              <th>Channel 2</th>
+              <th>Channel 3</th>
+              <th>Channel 4</th>
+              <th>Channel 5</th>
+              <th>Channel 6</th>
+              <th>Channel 7</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="2">GD32F20x</td>
+              <td>DMA 0</td>
+              <td></td>
+              <td class="active-cell">TIMER2_CH2</td>
+              <td class="active-cell">TIMER2_CH3</td>
+              <td></td>
+              <td></td>
+              <td class="active-cell">TIMER2_CH0</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>DMA 1</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td rowspan="2">GD32F4xx</td>
+              <td>DMA 0</td>
+              <td></td>
+              <td></td>
+              <td class="active-cell">TIMER2_CH3</td>
+              <td></td>
+              <td class="active-cell">TIMER2_CH0</td>
+              <td></td>
+              <td></td>
+              <td class="active-cell">TIMER2_CH2</td>
+            </tr>
+            <tr>
+              <td>DMA 1</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-			<tr class="text-center-row">
-				<td>GD32F207VC</td>
-				<td>-</td>
-				<td>25MHz</td>
-				<td>/5</td>
-				<td>x16</td>
-				<td>80Mhz</td>
-				<td>√</td>
-				<td>160Mhz</td>
-			</tr>
+    <section id="section2" class="section-panel">
+      <span class="section-kicker">Alternative transport</span>
+      <h2 class="section-title">SPI / I2S</h2>
+      <p>
+        As the SPI speed cannot be specified exactly, the <strong>I2S peripheral</strong> is used instead.
+        In this design, <strong>SPI speed = I2S bitrate</strong> = audio sample rate × number of bits per channel × number of channels.
+        Therefore:
+      </p>
 
-		</table>
+      <div class="highlight-box">
+        <p style="margin: 0;">
+          <strong>Audio sample rate = SPI speed / 16 / 2</strong><br>
+          For WS2812B-type protocols, the SPI speed must be close to <strong>6.4 MHz</strong>.
+        </p>
+      </div>
 
-		<h3>I2S prescaler Configuration</h3>
-		<ul>
-			<li>Frame format: DT16B CH16B</li>
-			<ul>
-				<li>Number of bit per channel: 16</li>
-				<li>Number of channels: 2</li>
-			</ul>
-			<li>Audio sample rate: 200kHz = 6400000 Hz / 16 / 2</li>
-			<li>MCK out: Disable</li>
-		</ul>
-		I2S bitrate = CK_I2S / (DIV * 2 + OF)
-		<table>
-			<tr>
-				<th>MCU</th>
-				<th>CK_I2S</th>
-				<th>DIV</th>
-				<th>OF</th>
-				<th>I2S bitrate</th>
-			</tr>
+      <h3>Clock tree</h3>
+      <div class="table-wrap">
+        <table class="modern-table">
+          <thead>
+            <tr>
+              <th>MCU</th>
+              <th>CK_SYS</th>
+              <th>CK_I2S</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GD32F103RC</td>
+              <td>108 MHz</td>
+              <td>108 MHz</td>
+            </tr>
+            <tr>
+              <td>GD32F303RC</td>
+              <td>120 MHz</td>
+              <td>120 MHz</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-			<tr class="text-center-row">
-				<td>GD32F103RC</td>
-				<td>108MHz</td>
-				<td>8</td>
-				<td>1</td>
-				<td>6.352.941</td>
-			</tr>
+      <div class="table-wrap" style="margin-top: 18px;">
+        <table class="modern-table">
+          <thead>
+            <tr>
+              <th>MCU</th>
+              <th>CK_SYS</th>
+              <th>HXTAL</th>
+              <th>PREDV1</th>
+              <th>PLL2MF</th>
+              <th>CK_PLL2</th>
+              <th>x2</th>
+              <th>CK_I2S</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GD32F107RC</td>
+              <td>-</td>
+              <td>25 MHz</td>
+              <td>/5</td>
+              <td>x16</td>
+              <td>80 MHz</td>
+              <td>√</td>
+              <td>160 MHz</td>
+            </tr>
+            <tr>
+              <td>GD32F207RG</td>
+              <td>-</td>
+              <td>25 MHz</td>
+              <td>/5</td>
+              <td>x16</td>
+              <td>80 MHz</td>
+              <td>√</td>
+              <td>160 MHz</td>
+            </tr>
+            <tr>
+              <td>GD32F207VC</td>
+              <td>-</td>
+              <td>25 MHz</td>
+              <td>/5</td>
+              <td>x16</td>
+              <td>80 MHz</td>
+              <td>√</td>
+              <td>160 MHz</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-			<tr class="text-center-row">
-				<td>GD32F107RC</td>
-				<td>160Mhz</td>
-				<td>12</td>
-				<td>1</td>
-				<td>6.400.000</td>
-			</tr>
+      <h3>I2S prescaler configuration</h3>
+      <div class="two-col-grid">
+        <div class="info-panel">
+          <ul class="feature-list">
+            <li><strong>Frame format:</strong> DT16B CH16B</li>
+            <li><strong>Number of bits per channel:</strong> 16</li>
+            <li><strong>Number of channels:</strong> 2</li>
+            <li><strong>Audio sample rate:</strong> 200 kHz = 6400000 Hz / 16 / 2</li>
+            <li><strong>MCK out:</strong> Disable</li>
+          </ul>
+        </div>
 
-			<tr class="text-center-row">
-				<td>GD32F207RG</td>
-				<td>160Mhz</td>
-				<td>12</td>
-				<td>1</td>
-				<td>6.400.000</td>
-			</tr>
+        <div class="info-panel">
+          <p>
+            <strong>I2S bitrate = CK_I2S / (DIV × 2 + OF)</strong>
+          </p>
+          <p>
+            This method provides a practical and stable way to generate the required bitstream timing
+            when exact SPI clock selection is not available.
+          </p>
+        </div>
+      </div>
 
-			<tr class="text-center-row">
-				<td>GD32F207VC</td>
-				<td>160Mhz</td>
-				<td>12</td>
-				<td>1</td>
-				<td>6.400.000</td>
-			</tr>
+      <div class="table-wrap">
+        <table class="modern-table">
+          <thead>
+            <tr>
+              <th>MCU</th>
+              <th>CK_I2S</th>
+              <th>DIV</th>
+              <th>OF</th>
+              <th>I2S bitrate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GD32F103RC</td>
+              <td>108 MHz</td>
+              <td>8</td>
+              <td>1</td>
+              <td>6.352.941</td>
+            </tr>
+            <tr>
+              <td>GD32F107RC</td>
+              <td>160 MHz</td>
+              <td>12</td>
+              <td>1</td>
+              <td>6.400.000</td>
+            </tr>
+            <tr>
+              <td>GD32F207RG</td>
+              <td>160 MHz</td>
+              <td>12</td>
+              <td>1</td>
+              <td>6.400.000</td>
+            </tr>
+            <tr>
+              <td>GD32F207VC</td>
+              <td>160 MHz</td>
+              <td>12</td>
+              <td>1</td>
+              <td>6.400.000</td>
+            </tr>
+            <tr>
+              <td>GD32F303RC</td>
+              <td>120 MHz</td>
+              <td>9</td>
+              <td>1</td>
+              <td>6.315.790</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-			<tr class="text-center-row">
-				<td>GD32F303RC</td>
-				<td>120MHz</td>
-				<td>9</td>
-				<td>1</td>
-				<td>6.315.790</td>
-			</tr>
+    <section id="section3" class="section-panel">
+      <span class="section-kicker">Hardware</span>
+      <h2 class="section-title">Development board 16x 4U, 2x DMX Out</h2>
+      <p>
+        Dedicated hardware for high-density pixel output with integrated DMX capability.
+        This board is intended for practical deployment where multiple pixel universes and robust real-time performance matter.
+      </p>
 
-		</table>
+      <a class="github-link" href="https://github.com/vanvught/GD32F450-Pixel-DMX512" target="_blank" rel="noopener noreferrer">
+        <i class="fa fa-github"></i>
+        GD32F450 Pixel DMX512 board on GitHub
+      </a>
+    </section>
+  </main>
 
-		<h2 id="section3">Development board 16x 4U, 2x DMX Out</h2>
-
-		GitHub: <a href="https://github.com/vanvught/GD32F450-Pixel-DMX512" target="_blank" rel="noopener noreferrer">GD32F450 Pixel DMX512 board</a>
-	</div>
-
-	<script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="script.js"></script>
 </body>
-
 </html>

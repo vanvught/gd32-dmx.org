@@ -171,3 +171,71 @@ code {
 pre code {
     white-space: pre;
 }
+
+.modern-page .pin-chip {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.modern-page .sig-pwr3v3 {
+  background: rgba(255, 165, 0, 0.20);
+  color: #ffd27a;
+  border: 1px solid rgba(255, 165, 0, 0.35);
+}
+
+.modern-page .sig-pwr5v {
+  background: rgba(255, 80, 80, 0.18);
+  color: #ff9a9a;
+  border: 1px solid rgba(255, 80, 80, 0.35);
+}
+
+.modern-page .sig-gnd {
+  background: rgba(160, 170, 185, 0.16);
+  color: #e7edf7;
+  border: 1px solid rgba(160, 170, 185, 0.28);
+}
+
+.modern-page .sig-uart {
+  background: rgba(65, 105, 225, 0.18);
+  color: #aecdff;
+  border: 1px solid rgba(65, 105, 225, 0.35);
+}
+
+.modern-page .sig-i2c {
+  background: rgba(238, 130, 238, 0.16);
+  color: #f3b8f3;
+  border: 1px solid rgba(238, 130, 238, 0.32);
+}
+
+.modern-page .sig-spi {
+  background: rgba(255, 215, 0, 0.14);
+  color: #ffe38a;
+  border: 1px solid rgba(255, 215, 0, 0.28);
+}
+
+.modern-page .sig-swd {
+  background: rgba(240, 255, 255, 0.14);
+  color: #dffcff;
+  border: 1px solid rgba(180, 240, 255, 0.28);
+}
+
+.modern-page .sig-dac {
+  background: rgba(255, 255, 239, 0.14);
+  color: #fff3b0;
+  border: 1px solid rgba(255, 244, 180, 0.24);
+}
+
+.modern-page .pin-number {
+  display: inline-block;
+  min-width: 28px;
+  text-align: center;
+  padding: 4px 8px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--page-border);
+  color: #ffffff;
+  font-weight: 700;
+}

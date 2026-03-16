@@ -1,110 +1,241 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Bootloader TFTP</title>
-<meta name="description" content="GigaDevice MCU GD32F Art-Net sACN DMX512 RDM OSC Pixel Bootloader TFTP GD32F107R GD32F207R GD32F207V GD32F407R GD32F450R GD32F470Z">
+<title>GD32 Bootloader TFTP</title>
+<meta name="description" content="GigaDevice MCU GD32F Art-Net sACN DMX512 RDM OSC Pixel Bootloader TFTP GD32F107R GD32F207R GD32F207V GD32F407R GD32F450R GD32F470Z GD32H759">
 <meta name="author" content="Arjan van Vught">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="page-modern.css" type="text/css" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-018KBY2JV9" type="text/javascript"></script>
 <script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-018KBY2JV9');
 </script>
 <script async src="https://kit.fontawesome.com/37a6441831.js" crossorigin="anonymous" type="text/javascript"></script>
 </head>
 
-<body>
+<body class="modern-page">
 	<div class="topnav" id="myTopnav">
 		<a href="index.html">Home</a>
 		<a href="dev-board.html">Dev-board</a>
 		<a href="bootloader.html" class="active">Bootloader TFTP</a>
 		<a href="dmx512.html">DMX512</a>
-      	<a href="rdm.html">RDM</a>
+		<a href="rdm.html">RDM</a>
 		<a href="pixel.html">Pixel</a>
 		<a href="ltc.html">LTC SMPTE</a>
-    	<a href="ethernet.html">Ethernet</a>
-   	 	<a href="memory.html">Memory</a>
+		<a href="ethernet.html">Ethernet</a>
+		<a href="memory.html">Memory</a>
 		<a href="github.html">GitHub</a>
 		<a href="contact.html">Contact</a>
 		<a href="https://paypal.me/AvanVught?locale.x=nl_NL">PayPal.Me Donate</a>
-		<a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i></a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
 	</div>
-	<div style="padding-left: 16px">
-		<h2>Bootloader TFTP</h2>
-		<p>The bootloader will install your application by means of the TFTP protocol. There is no need to change your application code. Per default DHCP is used for obtaining the ip-address.</p>
-		<p>The limitation for the firmware file to be uploaded is given by the RAM available:</p>
-		<table>
-			<tr>
-				<th>MCU</th>
-				<th>RAM</th>
-				<th>Firmware size</th>
-			</tr>
-			<tr>
-				<td>GD32F107RC</td>
-				<td>96K</td>
-				<td style="text-align: center">76K</td>
-			</tr>
-			<tr>
-				<td>GD32F207RG</td>
-				<td>256K</td>
-				<td style="text-align: center">234K</td>
-			</tr>
-			<tr>
-				<td>GD32F207VC</td>
-				<td>128K</td>
-				<td style="text-align: center">106K</td>
-			</tr>
-			<tr>
-				<td>GD32F407RE</td>
-				<td>128K</td>
-				<td style="text-align: center">116K</td>
-			</tr>	
-			<tr>
-				<td>GD32F450VI</td>
-				<td>512K</td>
-				<td style="text-align: center">234K</td>
-			</tr>
-			<tr>
-				<td>GD32F470VG</td>
-				<td>512K</td>
-				<td style="text-align: center">234K</td>
-			</tr>
-			<tr>
-				<td>GD32F470ZK</td>
-				<td>256K</td>
-				<td style="text-align: center">175K</td>
-			</tr>
-			<tr>
-				<td>GD32H759IM</td>
-				<td>1024K</td>
-				<td style="text-align: center">300K</td>
-			</tr>
-		</table>
 
-		<br>The bootloader is active during reset of the board:
-		<ul>
-			<li>Or when the KEY_BOOTLOADER_TFTP_GPIO_PINx is pressed.</li>
-			<li>Or when bkp_data_read(BKP_DATA_1) == 0xA5A5. This is set in your application by means of human readable UDP messages.</li>
-		</ul>
-		The bootloader can be installed with the tools supplied by GigaDevice:
-		<ul>
-			<li><a href="http://www.gd32mcu.com/en/download/7?kw=GD32F1" target="_blank" rel="noopener noreferrer">GD32F107</a></li>
-			<li><a href="http://www.gd32mcu.com/en/download/7?kw=GD32F2" target="_blank" rel="noopener noreferrer">GD32F207</a></li>
-			<li><a href="http://www.gd32mcu.com/en/download/7?kw=GD32F4" target="_blank" rel="noopener noreferrer">GD32F407</a></li>
-			<li><a href="http://www.gd32mcu.com/en/download/7?kw=GD32F4" target="_blank" rel="noopener noreferrer">GD32F450</a></li>
-			<li><a href="http://www.gd32mcu.com/en/download/7?kw=GD32F4" target="_blank" rel="noopener noreferrer">GD32F470</a></li>
-			<li><a href="http://www.gd32mcu.com/en/download/7?kw=GD32H7" target="_blank" rel="noopener noreferrer">GD32H759</a></li>
-		</ul>
-		<p>There is a sample Java UI available for installing the firmware: <a href="https://github.com/vanvught/GD32F-Firmware-Update-UI" target="_blank" rel="noopener noreferrer">GD32F-Firmware-Update-UI</a>
-<br>
-  <img src="https://raw.githubusercontent.com/vanvught/GD32F-Firmware-Update-UI/main/FirmwareUpdateUI.png" style="float: left" alt="GD32F Firmware Update UI TFTP Server">
-	</p></div>
+	<main class="page-shell">
+		<section class="hero-panel">
+			<div class="hero-content">
+				<span class="eyebrow">Firmware update</span>
+				<h1 class="hero-title">Bootloader with TFTP Update Support</h1>
+				<p class="hero-lead">
+					The bootloader installs your application over the <strong class="hero-highlight">TFTP protocol</strong>,
+					so there is no need to modify your application code. By default it uses
+					<strong class="hero-highlight">DHCP</strong> to obtain an IP address, making firmware updates straightforward
+					on supported GD32 targets.
+				</p>
+
+				<ul class="hero-badges">
+					<li>TFTP firmware upload</li>
+					<li>No application changes</li>
+					<li>DHCP by default</li>
+					<li>GD32F1 / F2 / F4 / H7</li>
+				</ul>
+
+				<div class="hero-actions">
+					<a href="#firmware-limits" class="hero-button hero-button-primary">Firmware limits</a>
+					<a href="#update-ui" class="hero-button hero-button-secondary">Java update UI</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="content-grid">
+			<article class="page-card">
+				<h2 class="card-title">How it works</h2>
+				<ul class="feature-list">
+					<li><strong>Bootloader receives firmware</strong> using TFTP</li>
+					<li><strong>Application code stays unchanged</strong></li>
+					<li><strong>IP addressing uses DHCP</strong> by default</li>
+					<li><strong>Activation is controlled</strong> during board reset</li>
+				</ul>
+			</article>
+
+			<article class="page-card">
+				<h2 class="card-title">Practical focus</h2>
+				<p>
+					This bootloader is intended for reliable field updates on embedded GD32 platforms.
+					The upload size limit depends on the available RAM of the target MCU, because the
+					firmware image must fit within the bootloader’s working constraints.
+				</p>
+			</article>
+		</section>
+
+		<section id="firmware-limits" class="section-panel">
+			<span class="section-kicker">Firmware capacity</span>
+			<h2 class="section-title">Maximum firmware size by MCU</h2>
+
+			<div class="highlight-box">
+				<h3>Why there is a limit</h3>
+				<p>
+					The maximum firmware file size that can be uploaded is determined by the amount of RAM
+					available on the target. Larger-memory devices can accommodate larger firmware images
+					during the update process.
+				</p>
+			</div>
+
+			<div class="table-wrap">
+				<table class="modern-table">
+					<thead>
+						<tr>
+							<th>MCU</th>
+							<th>RAM</th>
+							<th>Firmware size</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>GD32F107RC</td>
+							<td>96K</td>
+							<td class="active-cell">76K</td>
+						</tr>
+						<tr>
+							<td>GD32F207RG</td>
+							<td>256K</td>
+							<td class="active-cell">234K</td>
+						</tr>
+						<tr>
+							<td>GD32F207VC</td>
+							<td>128K</td>
+							<td class="active-cell">106K</td>
+						</tr>
+						<tr>
+							<td>GD32F407RE</td>
+							<td>128K</td>
+							<td class="active-cell">116K</td>
+						</tr>
+						<tr>
+							<td>GD32F450VI</td>
+							<td>512K</td>
+							<td class="active-cell">234K</td>
+						</tr>
+						<tr>
+							<td>GD32F470VG</td>
+							<td>512K</td>
+							<td class="active-cell">234K</td>
+						</tr>
+						<tr>
+							<td>GD32F470ZK</td>
+							<td>256K</td>
+							<td class="active-cell">175K</td>
+						</tr>
+						<tr>
+							<td>GD32H759IM</td>
+							<td>1024K</td>
+							<td class="active-cell">300K</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section class="section-panel">
+			<span class="section-kicker">Activation</span>
+			<h2 class="section-title">When the bootloader becomes active</h2>
+
+			<div class="section-grid">
+				<div class="info-panel">
+					<h3>Activation conditions</h3>
+					<ul class="feature-list">
+						<li>During board reset when <strong>KEY_BOOTLOADER_TFTP_GPIO_PINx</strong> is pressed</li>
+						<li>During board reset when <strong>bkp_data_read(BKP_DATA_1) == 0xA5A5</strong></li>
+					</ul>
+				</div>
+
+				<div class="info-panel">
+					<h3>Application-triggered entry</h3>
+					<p>
+						The backup register condition can be set by the running application using
+						<strong>human readable UDP messages</strong>. This provides a convenient way to
+						request a bootloader restart remotely without changing the firmware update flow.
+					</p>
+				</div>
+			</div>
+
+			<div class="info-note">
+				The bootloader entry mechanism is designed so updates can be initiated either
+				physically on the board or programmatically from the application environment.
+			</div>
+		</section>
+
+		<section class="section-panel">
+			<span class="section-kicker">Installation</span>
+			<h2 class="section-title">Installing the bootloader</h2>
+
+			<div class="section-grid">
+				<div class="info-panel">
+					<h3>Vendor tools</h3>
+					<p>
+						The bootloader can be installed using the programming tools supplied by GigaDevice.
+					</p>
+
+					<div class="quick-links-list">
+						<a href="http://www.gd32mcu.com/en/download/7?kw=GD32F1" target="_blank" rel="noopener noreferrer">GD32F107</a>
+						<a href="http://www.gd32mcu.com/en/download/7?kw=GD32F2" target="_blank" rel="noopener noreferrer">GD32F207</a>
+						<a href="http://www.gd32mcu.com/en/download/7?kw=GD32F4" target="_blank" rel="noopener noreferrer">GD32F407</a>
+						<a href="http://www.gd32mcu.com/en/download/7?kw=GD32F4" target="_blank" rel="noopener noreferrer">GD32F450</a>
+						<a href="http://www.gd32mcu.com/en/download/7?kw=GD32F4" target="_blank" rel="noopener noreferrer">GD32F470</a>
+						<a href="http://www.gd32mcu.com/en/download/7?kw=GD32H7" target="_blank" rel="noopener noreferrer">GD32H759</a>
+					</div>
+				</div>
+
+				<div class="info-panel">
+					<h3>Notes</h3>
+					<p>
+						Choose the package matching your MCU family. Once the bootloader is programmed,
+						firmware installation can be performed over the network using TFTP.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="update-ui" class="section-panel">
+			<span class="section-kicker">Desktop utility</span>
+			<h2 class="section-title">Sample Java firmware update UI</h2>
+
+			<div class="media-grid">
+				<div class="text-panel">
+					<h3>GD32F-Firmware-Update-UI</h3>
+					<p>
+						A sample Java-based user interface is available for installing firmware through the
+						TFTP bootloader. It provides a practical desktop workflow for selecting and uploading
+						firmware images to supported boards.
+					</p>
+
+					<a class="github-link" href="https://github.com/vanvught/GD32F-Firmware-Update-UI" target="_blank" rel="noopener noreferrer">
+						<i class="fa-brands fa-github"></i>
+						<span>Open GD32F-Firmware-Update-UI on GitHub</span>
+					</a>
+				</div>
+
+				<div class="image-panel">
+					<img src="https://raw.githubusercontent.com/vanvught/GD32F-Firmware-Update-UI/main/FirmwareUpdateUI.png" alt="GD32F Firmware Update UI TFTP Server">
+				</div>
+			</div>
+		</section>
+	</main>
 
 	<script type="text/javascript" src="script.js"></script>
 </body>

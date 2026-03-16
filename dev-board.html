@@ -1,25 +1,25 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <title>Development board</title>
-<meta name="description" content="Development board GigaDevice GD32F GD32F103R GD32F107R GD32F207R GD32F303R GD32F407R">
+<meta name="description" content="Development board GigaDevice GD32F GD32F103R GD32F107R GD32F207R GD32F303R GD32F407R with pin headers, Ethernet PHY support and board compatibility overview.">
 <meta name="author" content="Arjan van Vught">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="page-modern.css" type="text/css" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-018KBY2JV9" type="text/javascript"></script>
 <script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-018KBY2JV9');
 </script>
 <script async src="https://kit.fontawesome.com/37a6441831.js" crossorigin="anonymous" type="text/javascript"></script>
 </head>
 
-<body>
+<body class="modern-page">
 	<div class="topnav" id="myTopnav">
 		<a href="index.html">Home</a>
 		<a href="dev-board.html" class="active">Dev-board</a>
@@ -33,432 +33,435 @@
 		<a href="github.html">GitHub</a>
 		<a href="contact.html">Contact</a>
 		<a href="https://paypal.me/AvanVught?locale.x=nl_NL">PayPal.Me Donate</a>
-		<a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i></a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
 	</div>
 
-	<div style="padding-left: 16px">
-		<h2>Development board</h2>
+	<main class="page-shell">
+		<section class="hero-panel">
+			<div class="hero-content">
+				<span class="eyebrow">Reference hardware</span>
+				<h1 class="hero-title">GD32F Development Board</h1>
+				<p class="hero-lead">
+					A flexible development board for <strong class="hero-highlight">GD32F103Rx</strong>,
+					<strong class="hero-highlight">GD32F303Rx</strong>,
+					<strong class="hero-highlight">GD32F107Rx</strong>,
+					<strong class="hero-highlight">GD32F207Rx</strong>, and
+					<strong class="hero-highlight">GD32F407Rx</strong> devices. The board provides
+					compatible headers, Ethernet-oriented variants, and practical pin access for firmware,
+					networking, lighting, and general embedded development.
+				</p>
 
-		<a href="https://github.com/vanvught/GD32FxxxR-dev-board" target="_blank" rel="noopener noreferrer">GitHub download.</a>
-		This board can be used with the GD32F103Rx, GD32F303Rx and the GD32F107Rx, GD32F207Rx, GD32F407Rx (Ethernet) MCU's.
-		<p>Please note that the crystal for the GD32F107Rx, GD32F207Rx and the GD32F407Rx is <b>25MHz</b> and the crystal for the GD32F103Rx and GD32F303Rx is <b>8MHz</b>.</p>
-		<p>The USB is power and DFU (Ethernet MCU only).</p>
-		<p>The <b>2x13 header</b> is pin compatible with the Orange Pi Zero and Raspberry Pi boards. The <b>1x13 header</b> is pin compatible with the Orange Pi Zero.</p>
+				<ul class="hero-badges">
+					<li>GD32F103Rx</li>
+					<li>GD32F303Rx</li>
+					<li>GD32F107Rx</li>
+					<li>GD32F207Rx</li>
+					<li>GD32F407Rx</li>
+					<li>Orange Pi / Raspberry Pi compatible headers</li>
+				</ul>
 
-		<table>
-			<tr>
-				<th colspan="8">2x13 Header</th>
-			</tr>
+				<div class="hero-actions">
+					<a href="#board-overview" class="hero-button hero-button-primary">Board overview</a>
+					<a href="#headers-2x13" class="hero-button hero-button-secondary">Pin headers</a>
+				</div>
+			</div>
+		</section>
 
-			<tr>
-				<td colspan="2"></td>
-				<td style="background-color: #FFA500">3.3V PWR</td>
-				<td class="pin">1</td>
-				<td class="pin">2</td>
-				<td rowspan="2" style="background-color: #FF0000">5V PWR</td>
-				<td rowspan="2"></td>
-				<td rowspan="2"></td>
-			</tr>
+		<section id="board-overview" class="content-grid">
+			<article class="page-card">
+				<h2 class="card-title">Overview</h2>
+				<p>
+					<a href="https://github.com/vanvught/GD32FxxxR-dev-board" target="_blank" rel="noopener noreferrer">GitHub download</a>.
+					This board can be used with the GD32F103Rx, GD32F303Rx, GD32F107Rx,
+					GD32F207Rx, and GD32F407Rx MCU families.
+				</p>
+				<ul class="feature-list">
+					<li><strong>25 MHz crystal</strong> for GD32F107Rx, GD32F207Rx, and GD32F407Rx</li>
+					<li><strong>8 MHz crystal</strong> for GD32F103Rx and GD32F303Rx</li>
+					<li><strong>USB</strong> for power and DFU <span class="muted-inline">(Ethernet MCU only)</span></li>
+					<li><strong>2x13 header</strong> pin compatible with Orange Pi Zero and Raspberry Pi boards</li>
+					<li><strong>1x13 header</strong> pin compatible with Orange Pi Zero</li>
+				</ul>
+			</article>
 
-			<tr>
-				<td rowspan="2">REMAP = 1 / AF4</td>
-				<td style="background-color: #EE82EE">I2C0 SCA</td>
-				<td>PB9</td>
-				<td class="pin">3</td>
-				<td class="pin">4</td>
-			</tr>
+			<article class="page-card">
+				<h2 class="card-title">Board image</h2>
+				<div class="image-panel">
+					<a href="images/dev-board.png" target="_blank" rel="noopener noreferrer">
+						<img src="images/dev-board-small.png" alt="GD32F Development board">
+					</a>
+					<p>Click the image to view the larger version.</p>
+				</div>
+			</article>
+		</section>
 
-			<tr>
-				<td style="background-color: #EE82EE">I2C0 SCL</td>
-				<td>PB8</td>
-				<td class="pin">5</td>
-				<td class="pin">6</td>
-				<td class="gnd">GND</td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td colspan="2"></td>
-				<td>PA6</td>
-				<td class="pin">7</td>
-				<td class="pin">8</td>
-				<td>PC10</td>
-				<td class="uart">USART2 TX</td>
-				<td rowspan="2">REMAP [1:0] =“01” (partial remap) / AF7</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td class="gnd">GND</td>
-				<td class="pin">9</td>
-				<td class="pin">10</td>
-				<td>PC11</td>
-				<td class="uart">USART2 RX</td>
-			</tr>
-			<tr>
-				<td rowspan="2">REMAP = 0</td>
-				<td class="uart">USART5 RX</td>
-				<td>PC7</td>
-				<td class="pin">11</td>
-				<td class="pin">12</td>
-				<td>PB10</td>
-				<td colspan="2"></td>
-			</tr>
-			<tr>
-				<td class="uart">USART5 TX</td>
-				<td>PC6</td>
-				<td class="pin">13</td>
-				<td class="pin">14</td>
-				<td class="gnd">GND</td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td colspan="2"></td>
-				<td>PB14</td>
-				<td class="pin">15</td>
-				<td class="pin">16</td>
-				<td>PB15</td>
-				<td colspan="2"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td style="background-color: #FFA500">3.3V PWR</td>
-				<td class="pin">17</td>
-				<td class="pin">18</td>
-				<td>PA13</td>
-				<td style="background-color: #F0FFFF">SWDIO</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td class="spi">SPI0 MOSI</td>
-				<td>PB5</td>
-				<td class="pin">19</td>
-				<td class="pin">20</td>
-				<td>GND</td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td class="spi">SPI0 MISO</td>
-				<td>PB4</td>
-				<td class="pin">21</td>
-				<td class="pin">22</td>
-				<td>PA11</td>
-				<td colspan="2"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td class="spi">SPI0 SCK</td>
-				<td>PB3</td>
-				<td class="pin">23</td>
-				<td class="pin">24</td>
-				<td>PA15</td>
-				<td class="spi">SPI0 CS</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td class="gnd">GND</td>
-				<td class="pin">25</td>
-				<td class="pin">26</td>
-				<td>PA14</td>
-				<td style="background-color: #F0FFFF">SWCLK</td>
-				<td></td>
-			</tr>
-		</table>
+		<section class="section-panel">
+			<span class="section-kicker">Pin legend</span>
+			<h2 class="section-title">Signal colors</h2>
+			<div class="quick-links-list">
+				<span class="pin-chip sig-pwr3v3">3V3 PWR</span>
+				<span class="pin-chip sig-pwr5v">5V PWR</span>
+				<span class="pin-chip sig-gnd">GND</span>
+				<span class="pin-chip sig-uart">UART / USART</span>
+				<span class="pin-chip sig-i2c">I2C</span>
+				<span class="pin-chip sig-spi">SPI</span>
+				<span class="pin-chip sig-swd">SWD</span>
+				<span class="pin-chip sig-dac">DAC</span>
+			</div>
+		</section>
 
-		<p></p>
+		<section id="headers-2x13" class="section-panel">
+			<span class="section-kicker">Main expansion header</span>
+			<h2 class="section-title">2x13 Header</h2>
 
-		<table>
-			<tr>
-				<th colspan="4">1x13 Header</th>
-			</tr>
-			<tr>
-				<td class="pin">1</td>
-				<td colspan="2">NC</td>
-			</tr>
-			<tr>
-				<td class="pin">2</td>
-				<td class="gnd">GND</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td class="pin">3</td>
-				<td>PA14</td>
-				<td style="background-color: #F0FFFF">SWCLK</td>
-			</tr>
-			<tr>
-				<td class="pin">4</td>
-				<td class="gnd">GND</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td class="pin">5</td>
-				<td>PA13</td>
-				<td style="background-color: #F0FFFF">SWDIO</td>
-			</tr>
-			<tr>
-				<td class="pin">6</td>
-				<td colspan="2">NRST</td>
-			</tr>
-			<tr>
-				<td class="pin">7</td>
-				<td>PA5</td>
-				<td style="background-color: #FFFFEF">DAC1</td>
-			</tr>
-			<tr>
-				<td class="pin">8</td>
-				<td>PA4</td>
-				<td style="background-color: #FFFFEF">DAC0</td>
-			</tr>
-			<tr>
-				<td class="pin">9</td>
-				<td>PC12</td>
-				<td class="uart">UART4 TX</td>
-			</tr>
-			<tr>
-				<td class="pin">10</td>
-				<td>PD2</td>
-				<td class="uart">UART4 RX</td>
-			</tr>
-			<tr>
-				<td class="pin">11</td>
-				<td>PB6</td>
-				<td class="uart">USART0 TX</td>
-				<td rowspan="2">REMAP = 1 / AF7</td>
-			</tr>
-			<tr>
-				<td class="pin">12</td>
-				<td>PB7</td>
-				<td class="uart">USART0 RX</td>
-			</tr>
-			<tr>
-				<td class="pin">13</td>
-				<td class="gnd">GND</td>
-				<td></td>
-			</tr>
-		</table>
+			<div class="table-wrap">
+				<table class="modern-table">
+					<thead>
+						<tr>
+							<th>Notes A</th>
+							<th>Signal A</th>
+							<th>MCU A</th>
+							<th>Pin</th>
+							<th>Pin</th>
+							<th>MCU B</th>
+							<th>Signal B</th>
+							<th>Notes B</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="2"></td>
+							<td><span class="pin-chip sig-pwr3v3">3.3V PWR</span></td>
+							<td><span class="pin-number">1</span></td>
+							<td><span class="pin-number">2</span></td>
+							<td><span class="pin-chip sig-pwr5v">5V PWR</span></td>
+							<td colspan="2"></td>
+						</tr>
+						<tr>
+							<td rowspan="2">REMAP = 1 / AF4</td>
+							<td><span class="pin-chip sig-i2c">I2C0 SDA</span></td>
+							<td>PB9</td>
+							<td><span class="pin-number">3</span></td>
+							<td><span class="pin-number">4</span></td>
+							<td rowspan="2"><span class="pin-chip sig-pwr5v">5V PWR</span></td>
+							<td rowspan="2"></td>
+							<td rowspan="2"></td>
+						</tr>
+						<tr>
+							<td><span class="pin-chip sig-i2c">I2C0 SCL</span></td>
+							<td>PB8</td>
+							<td><span class="pin-number">5</span></td>
+							<td><span class="pin-number">6</span></td>
+							<td><span class="pin-chip sig-gnd">GND</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td colspan="2"></td>
+							<td>PA6</td>
+							<td><span class="pin-number">7</span></td>
+							<td><span class="pin-number">8</span></td>
+							<td>PC10</td>
+							<td><span class="pin-chip sig-uart">USART2 TX</span></td>
+							<td rowspan="2">REMAP [1:0] = “01” partial remap / AF7</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td><span class="pin-chip sig-gnd">GND</span></td>
+							<td><span class="pin-number">9</span></td>
+							<td><span class="pin-number">10</span></td>
+							<td>PC11</td>
+							<td><span class="pin-chip sig-uart">USART2 RX</span></td>
+						</tr>
+						<tr>
+							<td rowspan="2">REMAP = 0</td>
+							<td><span class="pin-chip sig-uart">USART5 RX</span></td>
+							<td>PC7</td>
+							<td><span class="pin-number">11</span></td>
+							<td><span class="pin-number">12</span></td>
+							<td>PB10</td>
+							<td colspan="2"></td>
+						</tr>
+						<tr>
+							<td><span class="pin-chip sig-uart">USART5 TX</span></td>
+							<td>PC6</td>
+							<td><span class="pin-number">13</span></td>
+							<td><span class="pin-number">14</span></td>
+							<td><span class="pin-chip sig-gnd">GND</span></td>
+							<td colspan="2"></td>
+						</tr>
+						<tr>
+							<td colspan="2"></td>
+							<td>PB14</td>
+							<td><span class="pin-number">15</span></td>
+							<td><span class="pin-number">16</span></td>
+							<td>PB15</td>
+							<td colspan="2"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td><span class="pin-chip sig-pwr3v3">3.3V PWR</span></td>
+							<td><span class="pin-number">17</span></td>
+							<td><span class="pin-number">18</span></td>
+							<td>PA13</td>
+							<td><span class="pin-chip sig-swd">SWDIO</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><span class="pin-chip sig-spi">SPI0 MOSI</span></td>
+							<td>PB5</td>
+							<td><span class="pin-number">19</span></td>
+							<td><span class="pin-number">20</span></td>
+							<td><span class="pin-chip sig-gnd">GND</span></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><span class="pin-chip sig-spi">SPI0 MISO</span></td>
+							<td>PB4</td>
+							<td><span class="pin-number">21</span></td>
+							<td><span class="pin-number">22</span></td>
+							<td>PA11</td>
+							<td colspan="2"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><span class="pin-chip sig-spi">SPI0 SCK</span></td>
+							<td>PB3</td>
+							<td><span class="pin-number">23</span></td>
+							<td><span class="pin-number">24</span></td>
+							<td>PA15</td>
+							<td><span class="pin-chip sig-spi">SPI0 CS</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td><span class="pin-chip sig-gnd">GND</span></td>
+							<td><span class="pin-number">25</span></td>
+							<td><span class="pin-number">26</span></td>
+							<td>PA14</td>
+							<td><span class="pin-chip sig-swd">SWCLK</span></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
 
-		<p></p>
+		<section class="section-panel">
+			<span class="section-kicker">Secondary header</span>
+			<h2 class="section-title">1x13 Header</h2>
 
-		
-		<table>
-		<tr>
-		<td>		<table>
-			<tr>
-				<th colspan="2">Boot UART0</th>
-			</tr>
-			<tr>
-				<td class="pin">1</td>
-				<td class="gnd">GND</td>
-			</tr>
-			<tr>
-				<td class="pin">2</td>
-				<td style="background-color: #4169E1">USART0 RX</td>
-				<td>PA10</td>
-				<td rowspan="2">REMAP = 0</td>
-			</tr>
-			<tr>
-				<td class="pin">3</td>
-				<td style="background-color: #4169E1">USART0 TX</td>
-				<td>PA9</td>
-			</tr>
-		</table></td>
-		<td>		<table>
-			<tr>
-				<th colspan="2">LED's</th>
-			</tr>
-			<tr>
-				<td class="pin">1</td>
-				<td>PC0</td>
-			</tr>
-			<tr>
-				<td class="pin">2</td>
-				<td>PC2</td>
-			</tr>
-			<tr>
-				<td class="pin">3</td>
-				<td>PC3</td>
-			</tr>
-			<tr>
-				<td class="pin">4</td>
-				<td style="background-color: #FFA500">3V3 PWR</td>
-			</tr>
-		</table></td>
-		<td>		<table>
-			<tr>
-				<th colspan="2">J5</th>
-			</tr>
-			<tr>
-				<td class="pin">1</td>
-				<td>PC8</td>
-			</tr>
-			<tr>
-				<td class="pin">2</td>
-				<td>PC9</td>
-			</tr>
-			<tr>
-				<td class="pin">3</td>
-				<td>PC13</td>
-			</tr>
-		</table></td>
-		</tr>
-		</table>
+			<div class="table-wrap">
+				<table class="modern-table">
+					<thead>
+						<tr>
+							<th>Pin</th>
+							<th>MCU</th>
+							<th>Signal</th>
+							<th>Notes</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td><span class="pin-number">1</span></td><td colspan="2">NC</td><td></td></tr>
+						<tr><td><span class="pin-number">2</span></td><td><span class="pin-chip sig-gnd">GND</span></td><td></td><td></td></tr>
+						<tr><td><span class="pin-number">3</span></td><td>PA14</td><td><span class="pin-chip sig-swd">SWCLK</span></td><td></td></tr>
+						<tr><td><span class="pin-number">4</span></td><td><span class="pin-chip sig-gnd">GND</span></td><td></td><td></td></tr>
+						<tr><td><span class="pin-number">5</span></td><td>PA13</td><td><span class="pin-chip sig-swd">SWDIO</span></td><td></td></tr>
+						<tr><td><span class="pin-number">6</span></td><td colspan="2">NRST</td><td></td></tr>
+						<tr><td><span class="pin-number">7</span></td><td>PA5</td><td><span class="pin-chip sig-dac">DAC1</span></td><td></td></tr>
+						<tr><td><span class="pin-number">8</span></td><td>PA4</td><td><span class="pin-chip sig-dac">DAC0</span></td><td></td></tr>
+						<tr><td><span class="pin-number">9</span></td><td>PC12</td><td><span class="pin-chip sig-uart">UART4 TX</span></td><td></td></tr>
+						<tr><td><span class="pin-number">10</span></td><td>PD2</td><td><span class="pin-chip sig-uart">UART4 RX</span></td><td></td></tr>
+						<tr><td><span class="pin-number">11</span></td><td>PB6</td><td><span class="pin-chip sig-uart">USART0 TX</span></td><td rowspan="2">REMAP = 1 / AF7</td></tr>
+						<tr><td><span class="pin-number">12</span></td><td>PB7</td><td><span class="pin-chip sig-uart">USART0 RX</span></td></tr>
+						<tr><td><span class="pin-number">13</span></td><td><span class="pin-chip sig-gnd">GND</span></td><td></td><td></td></tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
 
-		<h3>GD32F103Rx GD32F303Rx (only)</h3>
+		<section class="section-panel">
+			<span class="section-kicker">Auxiliary connectors</span>
+			<h2 class="section-title">Boot UART0, LEDs and J5</h2>
 
-		<table>
-			<tr>
-				<th colspan="4">2x7 Header</th>
-			</tr>
-			<tr>
-				<td>PB13</td>
-				<td class="pin">1</td>
-				<td class="pin">2</td>
-				<td>PB0</td>
-			</tr>
-			<tr>
-				<td>PB11</td>
-				<td class="pin">3</td>
-				<td class="pin">4</td>
-				<td>PB12</td>
-			</tr>
-			<tr>
-				<td>PC4</td>
-				<td class="pin">5</td>
-				<td class="pin">6</td>
-				<td>PC5</td>
-			</tr>
-			<tr>
-				<td>PA1</td>
-				<td class="pin">7</td>
-				<td class="pin">8</td>
-				<td>PA7</td>
-			</tr>
-			<tr>
-				<td>PA2</td>
-				<td class="pin">9</td>
-				<td class="pin">10</td>
-				<td>PC1</td>
-			</tr>
-			<tr>
-				<td class="gnd">GND</td>
-				<td class="pin">11</td>
-				<td class="pin">12</td>
-				<td class="gnd">GND</td>
-			</tr>
-			<tr>
-				<td style="background-color: #FFA500">3V3 PWR</td>
-				<td class="pin">13</td>
-				<td class="pin">14</td>
-				<td style="background-color: #FFA500">3V3 PWR</td>
-			</tr>
-		</table>
+			<div class="section-grid">
+				<div class="info-panel">
+					<h3>Boot UART0</h3>
+					<div class="table-wrap">
+						<table class="modern-table">
+							<thead>
+								<tr>
+									<th>Pin</th>
+									<th>Signal</th>
+									<th>MCU</th>
+									<th>Notes</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr><td><span class="pin-number">1</span></td><td><span class="pin-chip sig-gnd">GND</span></td><td></td><td></td></tr>
+								<tr><td><span class="pin-number">2</span></td><td><span class="pin-chip sig-uart">USART0 RX</span></td><td>PA10</td><td rowspan="2">REMAP = 0</td></tr>
+								<tr><td><span class="pin-number">3</span></td><td><span class="pin-chip sig-uart">USART0 TX</span></td><td>PA9</td></tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
 
+				<div class="info-panel">
+					<h3>LEDs</h3>
+					<div class="table-wrap">
+						<table class="modern-table">
+							<thead>
+								<tr>
+									<th>Pin</th>
+									<th>Signal</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr><td><span class="pin-number">1</span></td><td>PC0</td></tr>
+								<tr><td><span class="pin-number">2</span></td><td>PC2</td></tr>
+								<tr><td><span class="pin-number">3</span></td><td>PC3</td></tr>
+								<tr><td><span class="pin-number">4</span></td><td><span class="pin-chip sig-pwr3v3">3V3 PWR</span></td></tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
 
+				<div class="info-panel">
+					<h3>J5</h3>
+					<div class="table-wrap">
+						<table class="modern-table">
+							<thead>
+								<tr>
+									<th>Pin</th>
+									<th>Signal</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr><td><span class="pin-number">1</span></td><td>PC8</td></tr>
+								<tr><td><span class="pin-number">2</span></td><td>PC9</td></tr>
+								<tr><td><span class="pin-number">3</span></td><td>PC13</td></tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</section>
 
-		<h3>GD32F103Rx GD32F303Rx (only)</h3>
-		<table>
-			<tr>
-				<th colspan="5">1x4 Header</th>
-			</tr>
-			<tr>
-				<td></td>
-				<td class="gnd">GND</td>
-				<td class="pin">1</td>
-				<td class="gnd">GND</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td style="background-color: #FFA500">3V3 PWR</td>
-				<td class="pin">2</td>
-				<td style="background-color: #FFA500">3V3 PWR</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td rowspan="2">REMAP[1:0] = 00/01 / AF4</td>
-				<td style="background-color: #EE82EE">I2C1 SCL</td>
-				<td class="pin">3</td>
-				<td class="uart">USART2 RX</td>
-				<td rowspan="2">REMAP = 0 (no remap)</td>
-			</tr>
-			<tr>
-				<td style="background-color: #EE82EE">I2C1 SCA</td>
-				<td class="pin">4</td>
-				<td class="uart">USART2 TX</td>
-			</tr>
-		</table>
+		<section class="section-panel">
+			<span class="section-kicker">GD32F103Rx / GD32F303Rx only</span>
+			<h2 class="section-title">2x7 Header</h2>
 
-		<script type="text/javascript" src="script.js"></script>
-	
+			<div class="table-wrap">
+				<table class="modern-table">
+					<thead>
+						<tr>
+							<th>MCU A</th>
+							<th>Pin</th>
+							<th>Pin</th>
+							<th>MCU B</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td>PB13</td><td><span class="pin-number">1</span></td><td><span class="pin-number">2</span></td><td>PB0</td></tr>
+						<tr><td>PB11</td><td><span class="pin-number">3</span></td><td><span class="pin-number">4</span></td><td>PB12</td></tr>
+						<tr><td>PC4</td><td><span class="pin-number">5</span></td><td><span class="pin-number">6</span></td><td>PC5</td></tr>
+						<tr><td>PA1</td><td><span class="pin-number">7</span></td><td><span class="pin-number">8</span></td><td>PA7</td></tr>
+						<tr><td>PA2</td><td><span class="pin-number">9</span></td><td><span class="pin-number">10</span></td><td>PC1</td></tr>
+						<tr><td><span class="pin-chip sig-gnd">GND</span></td><td><span class="pin-number">11</span></td><td><span class="pin-number">12</span></td><td><span class="pin-chip sig-gnd">GND</span></td></tr>
+						<tr><td><span class="pin-chip sig-pwr3v3">3V3 PWR</span></td><td><span class="pin-number">13</span></td><td><span class="pin-number">14</span></td><td><span class="pin-chip sig-pwr3v3">3V3 PWR</span></td></tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
 
-		<h3>GD32F107Rx GD32F207Rx GD32F407Rx (only)</h3>
+		<section class="section-panel">
+			<span class="section-kicker">GD32F103Rx / GD32F303Rx only</span>
+			<h2 class="section-title">1x4 Header</h2>
 
-		<table>
-			<tr>
-				<th colspan="4">External-PHY</th>
-			</tr>
-			<tbody>
-				<tr>
-					<td>RMII TXD1</td>
-					<td class="pin">1</td>
-					<td class="pin">2</td>
-					<td>PHY INT</td>
-				</tr>
-				<tr>
-					<td>RMII TX_EN</td>
-					<td class="pin">3</td>
-					<td class="pin">4</td>
-					<td>RMII TXD0</td>
-				</tr>
-				<tr>
-					<td>RMII RXD0</td>
-					<td class="pin">5</td>
-					<td class="pin">6</td>
-					<td>RMII RXD1</td>
-				</tr>
-				<tr>
-					<td>RMII REF_CLK</td>
-					<td class="pin">7</td>
-					<td class="pin">8</td>
-					<td>RMII CRS_DV</td>
-				</tr>
-				<tr>
-					<td>MDIO</td>
-					<td class="pin">9</td>
-					<td class="pin">10</td>
-					<td>MDC</td>
-				</tr>
-				<tr>
-					<td class="gnd">GND</td>
-					<td class="pin">11</td>
-					<td class="pin">12</td>
-					<td class="gnd">GND</td>
-				</tr>
-				<tr>
-					<td style="background-color: #FFA500">3V3 PWR</td>
-					<td class="pin">13</td>
-					<td class="pin">14</td>
-					<td style="background-color: #FFA500">3V3 PWR</td>
-				</tr>
-			</tbody>
-		</table>
+			<div class="table-wrap">
+				<table class="modern-table">
+					<thead>
+						<tr>
+							<th>Notes A</th>
+							<th>Signal A</th>
+							<th>Pin</th>
+							<th>Signal B</th>
+							<th>Notes B</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td><span class="pin-chip sig-gnd">GND</span></td>
+							<td><span class="pin-number">1</span></td>
+							<td><span class="pin-chip sig-gnd">GND</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><span class="pin-chip sig-pwr3v3">3V3 PWR</span></td>
+							<td><span class="pin-number">2</span></td>
+							<td><span class="pin-chip sig-pwr3v3">3V3 PWR</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td rowspan="2">REMAP[1:0] = 00/01 / AF4</td>
+							<td><span class="pin-chip sig-i2c">I2C1 SCL</span></td>
+							<td><span class="pin-number">3</span></td>
+							<td><span class="pin-chip sig-uart">USART2 RX</span></td>
+							<td rowspan="2">REMAP = 0 (no remap)</td>
+						</tr>
+						<tr>
+							<td><span class="pin-chip sig-i2c">I2C1 SDA</span></td>
+							<td><span class="pin-number">4</span></td>
+							<td><span class="pin-chip sig-uart">USART2 TX</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
 
-	</div>
-	<footer>
-	<p>
-		<a href="images/dev-board.png" target="_blank" rel="noopener noreferrer">
-		<img src="images/dev-board-small.png" style="float: left; width: 300px; height: 200px;" alt="GD32F Development board">
-	</a>
-	Click on the image for enlarge.
-	</p>
-	</footer>
+		<section class="section-panel">
+			<span class="section-kicker">GD32F107Rx / GD32F207Rx / GD32F407Rx only</span>
+			<h2 class="section-title">External PHY Header</h2>
+
+			<div class="highlight-box">
+				<h3>Ethernet-capable targets</h3>
+				<p>
+					This connector is intended for the Ethernet-capable MCU variants and exposes the
+					required RMII and management signals for an external PHY connection.
+				</p>
+			</div>
+
+			<div class="table-wrap">
+				<table class="modern-table">
+					<thead>
+						<tr>
+							<th>Signal A</th>
+							<th>Pin</th>
+							<th>Pin</th>
+							<th>Signal B</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td>RMII TXD1</td><td><span class="pin-number">1</span></td><td><span class="pin-number">2</span></td><td>PHY INT</td></tr>
+						<tr><td>RMII TX_EN</td><td><span class="pin-number">3</span></td><td><span class="pin-number">4</span></td><td>RMII TXD0</td></tr>
+						<tr><td>RMII RXD0</td><td><span class="pin-number">5</span></td><td><span class="pin-number">6</span></td><td>RMII RXD1</td></tr>
+						<tr><td>RMII REF_CLK</td><td><span class="pin-number">7</span></td><td><span class="pin-number">8</span></td><td>RMII CRS_DV</td></tr>
+						<tr><td>MDIO</td><td><span class="pin-number">9</span></td><td><span class="pin-number">10</span></td><td>MDC</td></tr>
+						<tr><td><span class="pin-chip sig-gnd">GND</span></td><td><span class="pin-number">11</span></td><td><span class="pin-number">12</span></td><td><span class="pin-chip sig-gnd">GND</span></td></tr>
+						<tr><td><span class="pin-chip sig-pwr3v3">3V3 PWR</span></td><td><span class="pin-number">13</span></td><td><span class="pin-number">14</span></td><td><span class="pin-chip sig-pwr3v3">3V3 PWR</span></td></tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</main>
+
+	<script type="text/javascript" src="script.js"></script>
 </body>
-
 </html>

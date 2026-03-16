@@ -1,13 +1,14 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>GD32Fxxx DMX512 RDM Pixel</title>
+<title>GD32 Ethernet</title>
 <meta name="description"
 	content="GigaDevice MCU GD32F Art-Net sACN DMX512 RDM DP83848 LAN8700 RTL8201F Ethernet IP UDP NTP TFTP MDNS TCP HTTP">
 <meta name="author" content="Arjan van Vught">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="page-modern.css" type="text/css" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async
 	src="https://www.googletagmanager.com/gtag/js?id=G-018KBY2JV9"
@@ -21,205 +22,240 @@
 <script async src="https://kit.fontawesome.com/37a6441831.js" crossorigin="anonymous" type="text/javascript"></script>
 </head>
 
-<body>
+<body class="modern-page">
 	<div class="topnav" id="myTopnav">
-		<a href="index.html" class="active">Home</a> <a href="dev-board.html">Dev-board</a>
-		<a href="bootloader.html">Bootloader TFTP</a> <a href="dmx512.html">DMX512</a>
-		<a href="rdm.html">RDM</a> <a href="pixel.html">Pixel</a> 
-		<a href="ltc.html">LTC SMPTE</a> <a href="ethernet.html" class="active">Ethernet</a>
-		<a href="memory.html">Memory</a> <a href="github.html">GitHub</a> 
+		<a href="index.html">Home</a>
+		<a href="dev-board.html">Dev-board</a>
+		<a href="bootloader.html">Bootloader TFTP</a>
+		<a href="dmx512.html">DMX512</a>
+		<a href="rdm.html">RDM</a>
+		<a href="pixel.html">Pixel</a>
+		<a href="ltc.html">LTC SMPTE</a>
+		<a href="ethernet.html" class="active">Ethernet</a>
+		<a href="memory.html">Memory</a>
+		<a href="github.html">GitHub</a>
 		<a href="contact.html">Contact</a>
-		<a href="https://paypal.me/AvanVught?locale.x=nl_NL">PayPal.Me
-			Donate</a> <a href="javascript:void(0);" class="icon"
-			onclick="myFunction()"> <i class="fa fa-bars"></i></a>
+		<a href="https://paypal.me/AvanVught?locale.x=nl_NL">PayPal.Me Donate</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
 	</div>
 
-	<div style="padding-left: 16px">
-		<h2>Ethernet</h2>
-		Supported RMII PHY's:
-		<ul>
-			<li>DP83848</li>
-			<li>LAN8700</li>
-			<li><a href="ethernet.html#rtl8201f">RTL8201F</a></li>
-		</ul>
-		Features:
-		<ul>
-			<li>IP (Internet Protocol, IPv4)</li>
-			<li>ICMP (Internet Control Message Protocol)</li>
-			<li>IGMP (Internet Group Management Protocol)</li>
-			<li>DHCP, Zeroconf</li>
-			<li>UDP (User Datagram Protocol)</li>
-			<li>TCP (Transmission Control Protocol)</li>
-		</ul>
-		Applications:
-		<ul>
-			<li>NTP client</li>
-			<li>TFTP server</li>
-			<li>HTTP server</li>
-			<li>MDNS (Multicast DNS) responder</li>
-		</ul>
-		Example building the firmware for RTL8201F: <br>
-		<pre><code>make -f Makefile.GD32 clean && make -f Makefile.GD32 ENET_PHY=RTL8201F</code></pre>
+	<main class="page-shell">
+		<section class="hero-panel">
+			<div class="hero-content">
+				<span class="eyebrow">GD32 Ethernet Stack</span>
+				<h1 class="hero-title">Lightweight Ethernet for Cortex-ARM</h1>
+				<p class="hero-lead">
+					A compact and efficient Ethernet stack for GD32 Cortex-ARM microcontrollers,
+					designed for deterministic embedded networking with low overhead and practical protocol support.
+					It provides the essential network building blocks for real-world control, discovery,
+					firmware update, and web-based configuration.
+				</p>
 
-		<h3 id="rtl8201f">RTL8201F RMSR Timing Configuration (GD32F4xx only)</h3>
+				<ul class="hero-badges">
+					<li>IPv4</li>
+					<li>UDP / TCP</li>
+					<li>DHCP / Zeroconf</li>
+					<li>NTP</li>
+					<li>TFTP</li>
+					<li>HTTP</li>
+					<li>mDNS</li>
+				</ul>
 
-		<h4>Purpose</h4>
+				<div class="hero-actions">
+					<a href="#phy-support" class="hero-button hero-button-primary">Supported PHYs</a>
+					<a href="#rtl8201f" class="hero-button hero-button-secondary">RTL8201F timing</a>
+				</div>
+			</div>
+		</section>
 
-		<p>
-			The RTL8201F PHY contains an <b>RMII Mode Setting Register (RMSR)</b>
-			located at page 7, register 16. This register controls several RMII
-			interface options, including the PHY’s programmable RMII transmit
-			timing offset and RMII receive timing offset.
-		</p>
+		<section class="content-grid">
+			<article class="page-card" id="phy-support">
+				<h2 class="card-title">Supported RMII PHYs</h2>
+				<ul class="feature-list">
+					<li><strong>DP83848</strong></li>
+					<li><strong>LAN8700</strong></li>
+					<li><strong><a href="#rtl8201f">RTL8201F</a></strong></li>
+				</ul>
+			</article>
 
-		<p>In the RTL8201F datasheet these fields are defined as:</p>
+			<article class="page-card">
+				<h2 class="card-title">Core protocol support</h2>
+				<ul class="feature-list">
+					<li><strong>IP</strong> (Internet Protocol, IPv4)</li>
+					<li><strong>ICMP</strong> (Internet Control Message Protocol)</li>
+					<li><strong>IGMP</strong> (Internet Group Management Protocol)</li>
+					<li><strong>DHCP</strong> and <strong>Zeroconf</strong></li>
+					<li><strong>UDP</strong> (User Datagram Protocol)</li>
+					<li><strong>TCP</strong> (Transmission Control Protocol)</li>
+				</ul>
+			</article>
+		</section>
 
-		<ul>
-			<li><b>Bits [11:8]</b> — <code>Rg_rmii_tx_offset</code> : adjusts RMII TX interface timing</li>
-			<li><b>Bits [7:4]</b> — <code>Rg_rmii_rx_offset</code> : adjusts RMII RX interface timing</li>
-		</ul>
+		<section class="content-grid">
+			<article class="page-card">
+				<h2 class="card-title">Applications</h2>
+				<ul class="feature-list">
+					<li><strong>NTP client</strong></li>
+					<li><strong>TFTP server</strong></li>
+					<li><strong>HTTP server</strong></li>
+					<li><strong>mDNS responder</strong></li>
+				</ul>
+			</article>
 
-		<p>
-			The default value for both fields is
-			<code>1111b</code>
-			.
-		</p>
+			<article class="page-card">
+				<h2 class="card-title">Build example</h2>
+				<p>
+					Example for building firmware with the <strong>RTL8201F</strong> PHY selected:
+				</p>
+				<pre class="code-block"><code>make -f Makefile.GD32 clean && make -f Makefile.GD32 ENET_PHY=RTL8201F</code></pre>
+			</article>
+		</section>
 
-		<p>
-			The datasheet states that RMII TX and RX timing are adjustable with a
-			minimum resolution of approximately <b>2 ns</b>. However, it also
-			notes that modifying these values is generally <i>not recommended</i>,
-			since the default configuration is intended to provide the optimum
-			timing for most platforms.
-		</p>
+		<section id="rtl8201f" class="section-panel">
+			<span class="section-kicker">PHY timing configuration</span>
+			<h2 class="section-title">RTL8201F RMSR Timing Configuration <span class="muted-inline">(GD32F4xx only)</span></h2>
 
+			<div class="section-grid">
+				<div class="info-panel">
+					<h3>Purpose</h3>
+					<p>
+						The RTL8201F PHY contains an <strong>RMII Mode Setting Register (RMSR)</strong>
+						located at page 7, register 16. This register controls several RMII interface options,
+						including the programmable RMII transmit timing offset and RMII receive timing offset.
+					</p>
 
-		<h4>RMSR Register Function</h4>
+					<p>In the RTL8201F datasheet these fields are defined as:</p>
 
-		<p>
-			In RMII mode, the PHY and MAC exchange data relative to the shared <b>50&nbsp;MHz
-				REFCLK</b>. The interface timing margin therefore depends on:
-		</p>
+					<ul class="feature-list">
+						<li><strong>Bits [11:8]</strong> — <code>Rg_rmii_tx_offset</code> : adjusts RMII TX interface timing</li>
+						<li><strong>Bits [7:4]</strong> — <code>Rg_rmii_rx_offset</code> : adjusts RMII RX interface timing</li>
+					</ul>
 
-		<ul>
-			<li>setup time</li>
-			<li>hold time</li>
-			<li>internal PHY delay</li>
-			<li>MAC sampling point</li>
-			<li>PCB routing</li>
-			<li>clock distribution</li>
-		</ul>
+					<p>
+						The default value for both fields is <code>1111b</code>.
+					</p>
 
-		<p>The RTL8201F exposes programmable delay/offset fields in RMSR
-			so that the effective RMII timing can be adjusted if the default
-			timing does not meet the platform’s timing requirements.</p>
+					<p>
+						The datasheet states that RMII TX and RX timing are adjustable with a minimum resolution of approximately
+						<strong>2 ns</strong>. It also notes that changing these values is generally not recommended unless
+						platform timing requires compensation.
+					</p>
+				</div>
 
-		<p>Functionally:</p>
+				<div class="info-panel">
+					<h3>RMSR register function</h3>
+					<p>
+						In RMII mode, the PHY and MAC exchange data relative to the shared <strong>50 MHz REFCLK</strong>.
+						The timing margin therefore depends on:
+					</p>
 
-		<ul>
-			<li><b>RX timing offset</b> adjusts the PHY-to-MAC RMII receive
-				path.</li>
-			<li><b>TX timing offset</b> adjusts the MAC-to-PHY RMII transmit
-				path.</li>
-		</ul>
+					<ul class="feature-list">
+						<li>setup time</li>
+						<li>hold time</li>
+						<li>internal PHY delay</li>
+						<li>MAC sampling point</li>
+						<li>PCB routing</li>
+						<li>clock distribution</li>
+					</ul>
 
-		<p>The register also contains additional RMII configuration
-			controls such as:</p>
+					<p>
+						The RTL8201F exposes programmable timing fields in RMSR so the effective RMII timing can be adjusted
+						if the default timing does not meet the platform requirements.
+					</p>
 
-		<ul>
-			<li>RMII / MII mode selection</li>
-			<li>RMII clock direction</li>
-			<li>RXDV / CRS_DV behavior</li>
-		</ul>
+					<ul class="feature-list">
+						<li><strong>RX timing offset</strong> adjusts the PHY-to-MAC RMII receive path.</li>
+						<li><strong>TX timing offset</strong> adjusts the MAC-to-PHY RMII transmit path.</li>
+					</ul>
 
+					<p>
+						The register also contains additional RMII configuration controls such as RMII / MII mode selection,
+						RMII clock direction, and RXDV / CRS_DV behavior.
+					</p>
+				</div>
+			</div>
 
-		<h4>Code Implementation</h4>
+			<div class="highlight-box">
+				<h3>Why this matters</h3>
+				<p>
+					The implementation modifies only the TX and RX timing fields while preserving the rest of the register state.
+					That makes it a safe and practical way to apply timing compensation on GD32F4xx targets when needed.
+				</p>
+			</div>
 
-		<pre>
-			<code class="language-c">
-			#define RMSR_RX_TIMING_SHIFT 4
-			#define RMSR_RX_TIMING_MASK  0xF0
-			#define RMSR_TX_TIMING_SHIFT 8
-			#define RMSR_TX_TIMING_MASK  0xF00
-		</code>
-		</pre>
+			<div class="section-grid">
+				<div class="info-panel">
+					<h3>Code implementation</h3>
+					<pre class="code-block"><code>#define RMSR_RX_TIMING_SHIFT 4
+#define RMSR_RX_TIMING_MASK  0xF0
+#define RMSR_TX_TIMING_SHIFT 8
+#define RMSR_TX_TIMING_MASK  0xF00</code></pre>
 
-		<p>These constants match the RTL8201F bit allocation:</p>
+					<p>These constants match the RTL8201F bit allocation:</p>
+					<ul class="feature-list">
+						<li>RX timing field → bits <code>[7:4]</code></li>
+						<li>TX timing field → bits <code>[11:8]</code></li>
+					</ul>
 
-		<ul>
-			<li>RX timing field → bits <code>[7:4]</code></li>
-			<li>TX timing field → bits <code>[11:8]</code></li>
-		</ul>
+					<p>
+						The function constructs a value containing only these two fields and writes it using:
+					</p>
+					<p><code>WritePaged(0x7, PHY_REG_RMSR, phy_value, mask)</code></p>
+				</div>
 
-		<p>The function constructs a value containing only these two
-			fields and writes it using:</p>
+				<div class="info-panel">
+					<h3>What <code>WritePaged()</code> does</h3>
+					<ol class="ordered-list">
+						<li>Select PHY page <code>7</code></li>
+						<li>Read the current register value</li>
+						<li>Clear only the bits defined by the mask</li>
+						<li>Insert the new field values</li>
+						<li>Write the modified value back</li>
+						<li>Restore page <code>0</code></li>
+					</ol>
 
-		<p>
-			<code>WritePaged(0x7, PHY_REG_RMSR, phy_value, mask)</code>
-		</p>
+					<p>
+						This is important because RMSR contains additional configuration bits beyond the timing offsets.
+						The implementation changes only the TX/RX offset fields while preserving the remaining register state.
+					</p>
+				</div>
+			</div>
 
-		<p>
-			The
-			<code>WritePaged()</code>
-			helper performs the following operations:
-		</p>
+			<h3>Values written by <code>CustomizedTiming()</code></h3>
+			<div class="section-grid">
+				<div class="info-panel">
+					<p>For GD32F4xx targets the following timing values are used:</p>
+					<ul class="feature-list">
+						<li><code>RMSR_RX_TIMING_VAL = 0x4</code></li>
+						<li>
+							<code>RMSR_TX_TIMING_VAL</code>
+							<ul class="nested-list">
+								<li><code>0x2</code> for GD32F407</li>
+								<li><code>0x1</code> for GD32F470</li>
+								<li><code>0xF</code> for other GD32F4xx targets</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
 
-		<ol>
-			<li>Select PHY page <code>7</code></li>
-			<li>Read the current register value</li>
-			<li>Clear only the bits defined by the mask</li>
-			<li>Insert the new field values</li>
-			<li>Write the modified value back</li>
-			<li>Restore page <code>0</code></li>
-		</ol>
+				<div class="info-panel">
+					<h3>Computed values</h3>
+					<ul class="feature-list">
+						<li><strong>GD32F407</strong><br><code>phy_value = (0x4 &lt;&lt; 4) | (0x2 &lt;&lt; 8) = 0x0240</code></li>
+						<li><strong>GD32F470</strong><br><code>phy_value = (0x4 &lt;&lt; 4) | (0x1 &lt;&lt; 8) = 0x0140</code></li>
+						<li><strong>Other GD32F4xx</strong><br><code>phy_value = (0x4 &lt;&lt; 4) | (0xF &lt;&lt; 8) = 0x0F40</code></li>
+					</ul>
+				</div>
+			</div>
 
-		<p>This is important because RMSR contains additional
-			configuration bits beyond the timing offsets. The implementation
-			modifies only the TX/RX offset fields while preserving the remaining
-			register state.</p>
+			<div class="info-note">
+				Because the datasheet specifies only the minimum adjustment resolution of <strong>2 ns</strong>
+				and does not provide a full transfer function for these codes, the values are best interpreted as
+				<strong>timing tap selections</strong> rather than exact absolute delay values.
+			</div>
+		</section>
+	</main>
 
-		<p>This is the correct approach when applying timing compensation
-			to RMSR.</p>
-
-
-		<h4>
-			Values Written by
-			<code>CustomizedTiming()</code>
-		</h4>
-
-		<p>For GD32F4xx targets the following timing values are used:</p>
-
-		<ul>
-			<li><code>RMSR_RX_TIMING_VAL = 0x4</code></li>
-			<li><code>RMSR_TX_TIMING_VAL</code>
-				<ul>
-					<li><code>0x2</code> for GD32F407</li>
-					<li><code>0x1</code> for GD32F470</li>
-					<li><code>0xF</code> for other GD32F4xx targets</li>
-				</ul></li>
-		</ul>
-
-
-		<p>The resulting RMSR values written to the PHY are therefore:</p>
-
-		<ul>
-			<li><b>GD32F407</b><br> <code>phy_value = (0x4
-					&lt;&lt; 4) | (0x2 &lt;&lt; 8) = 0x0240</code></li>
-
-			<li><b>GD32F470</b><br> <code>phy_value = (0x4
-					&lt;&lt; 4) | (0x1 &lt;&lt; 8) = 0x0140</code></li>
-
-			<li><b>Other GD32F4xx</b><br> <code>phy_value = (0x4
-					&lt;&lt; 4) | (0xF &lt;&lt; 8) = 0x0F40</code></li>
-		</ul>
-
-		<p>
-			Because the datasheet specifies only the minimum adjustment
-			resolution (2&nbsp;ns) and does not provide a full transfer function
-			for these codes, the values should be interpreted as <b>timing
-				tap selections</b> rather than precise absolute delay values.
-		</p>
-	</div>
 	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
