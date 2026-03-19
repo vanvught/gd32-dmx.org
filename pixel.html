@@ -92,20 +92,14 @@
 
 		<h3>RTZ protocol DMA requests</h3>
 		<p>For RTZ protocol pixels there are three DMA requests:</p>
-		<ol>
-			<li><strong>Always the HIGH output</strong>.</li>
-			<li><strong>The LOW output for a 0 code</strong>.</li>
-			<li><strong>Always the LOW output after T1H</strong>.</li>
-		</ol>
-
 		<table>
 			<tr>
 				<td>
-					<ol>
-						<li>Always the HIGH output.</li>
-						<li>The LOW when there must be a 0 code.</li>
-						<li>Always the LOW output after T1H.</li>
-					</ol>
+				<ol>
+					<li><strong>Always the HIGH output</strong>.</li>
+					<li><strong>The LOW output for a 0 code</strong>.</li>
+					<li><strong>Always the LOW output after T1H</strong>.</li>
+				</ol>
 				</td>
 				<td><img src="images/pixel-dma.png" style="width: auto; height: 70%;" alt="Timer DMA GPIO waveform generation for WS2812B"></td>
 			</tr>
