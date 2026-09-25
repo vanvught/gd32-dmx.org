@@ -125,7 +125,20 @@
 					<td></td>
 					<td></td>
 					<td>√</td>
-					<td>planned</td>
+					<td></td>
+					<td>√</td>
+				</tr>
+				<tr class="text-center-row">
+					<td>GD32F427RE</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>√</td>
 					<td>√</td>
 				</tr>
 				<tr class="text-center-row">
@@ -242,6 +255,14 @@
 					<td>6</td>
 				</tr>
 				<tr class="text-center-row">
+					<td>GD32F427RE</td>
+					<td></td>
+					<td>200MHz</td>
+					<td>512</td>
+					<td>256</td>
+					<td>6</td>
+				</tr>
+				<tr class="text-center-row">
 					<td>GD32F450VI</td>
 					<td></td>
 					<td>200MHz</td>
@@ -286,9 +307,9 @@
 				</tr>
 				<tr>
 					<td>0</td>
-					<td>Reserved</td>
-					<td>Rotary encoder</td>
-					<td>-</td>
+					<td>settimeofday/gettimeofday/time</td>
+					<td></td>
+					<td>F10x/F303</td>
 				</tr>
 				<tr>
 					<td>1</td>
@@ -321,15 +342,15 @@
 				</tr>
 				<tr>
 					<td>6</td>
-					<td><a href="dmx512.html" target="_blank">DMX Receive</a> / <a href="ltc.html" target="_blank">LTC SMPTE</a></td>
+					<td>Up time / millis / <a href="dmx512.html" target="_blank">DMX Receive</a></td>
 					<td></td>
 					<td>All</td>
 				</tr>
 				<tr>
 					<td>7</td>
-					<td>settimeofday/gettimeofday/time</td>
-					<td>Optional for use with FreeRTOS</td>
-					<td>F10x/F303/F207/F4xx</td>
+					<td>settimeofday/gettimeofday/time<br>Soft UART</td>
+					<td><br>GPIOA PIN10 RX</td>
+					<td>F207/F4xx<br>F10x/F303</td>
 				</tr>
 				<tr>
 					<td>8</td>
@@ -340,26 +361,14 @@
 				<tr>
 					<td>9</td>
 					<td>Soft UART</td>
-					<td>GPIOA PIN9 TX Only</td>
+					<td>GPIOA PIN9 TX</td>
 					<td>F207/F4xx</td>
 				</tr>
 				<tr>
-					<td>10</td>
-					<td><a href="ltc.html" target="_blank">LTC SMPTE</a></td>
-					<td></td>
-					<td>F4xx</td>
-				</tr>
-				<tr>
 					<td>11</td>
-					<td><a href="ltc.html" target="_blank">LTC SMPTE</a></td>
-					<td></td>
-					<td>F4xx</td>
-				</tr>
-				<tr>
-					<td>13</td>
-					<td><a href="ltc.html" target="_blank">LTC SMPTE</a></td>
-					<td></td>
-					<td>F4xx</td>
+					<td>Soft UART</td>
+					<td>GPIOA PIN10 RX</td>
+					<td>F207/F4xx</td>
 				</tr>
 				<tr>
 					<td>14</td>
@@ -370,13 +379,13 @@
 				<tr>
 					<td>15</td>
 					<td>Soft UART</td>
-					<td>GPIOA PIN9 TX Only</td>
+					<td>GPIOA PIN9 TX</td>
 					<td>H7xx</td>
 				</tr>
 				<tr>
 					<td>16</td>
 					<td>settimeofday/gettimeofday/time</td>
-					<td>Optional for use with FreeRTOS</td>
+					<td></td>
 					<td>H7xx</td>
 				</tr>
 			</table>
